@@ -65,7 +65,7 @@ AI-Fitness-Trainer/
 │
 ├── app.py
 ├── README.md
-
+```
 
 
 ---
@@ -92,3 +92,25 @@ python app.py
 
 ## ✔ Step 1: Create folder
 Inside your project:
+static/images/
+
+
+---
+
+## ✔ Step 2: Add screenshots and rename them:
+
+- `index.png`
+- `login.png`
+- `register.png`
+- `workout.png`
+
+---
+
+## ✔ Step 3: Upload again to GitHub
+
+Run:
+
+```bash
+git add .
+git commit -m "Added README with screenshots"
+git push
