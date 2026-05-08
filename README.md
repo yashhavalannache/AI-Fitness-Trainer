@@ -15,16 +15,16 @@ Built with ❤️ using Flask, HTML, CSS, and AI-based logic to deliver a smooth
 ## 📸 Screenshots
 
 ### 🏠 Home Page (Index)
-![Home Page](static/images/index.png)
+![Home Page](static/images/index.jpeg)
 
 ### 🔐 Login Page
-![Login Page](static/images/login.png)
+![Login Page](static/images/login.jpeg)
 
 ### 📝 Register Page
-![Register Page](static/images/register.png)
+![Register Page](static/images/register.jpeg)
 
 ### 💪 Workout Page
-![Workout Page](static/images/workout.png)
+![Workout Page](static/images/workout.jpeg)
 
 ---
 
@@ -72,7 +72,6 @@ AI-Fitness-Trainer/
 
 ## 🚀 How to Run Locally
 
-```bash
 # Clone the repository
 git clone https://github.com/yashhavalannache/AI-Fitness-Trainer.git
 
@@ -87,30 +86,3 @@ python app.py
 
 
 ---
-
-# 📸 IMPORTANT: How to add your images
-
-## ✔ Step 1: Create folder
-Inside your project:
-static/images/
-
-
----
-
-## ✔ Step 2: Add screenshots and rename them:
-
-- `index.png`
-- `login.png`
-- `register.png`
-- `workout.png`
-
----
-
-## ✔ Step 3: Upload again to GitHub
-
-Run:
-
-```bash
-git add .
-git commit -m "Added README with screenshots"
-git push

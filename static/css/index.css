@@ -33,19 +33,43 @@ body{
    BACKGROUND GLOW EFFECT
 ========================= */
 body{
-    background:url("/static/images/fitness-bg.jpg") no-repeat center center fixed;
-    background-size:cover;
+    margin:0;
+    padding:0;
+
+    background:none; /* remove image background */
+
+    overflow-y:auto;   /* allow scrolling */
+    overflow-x:hidden;
+
+    min-height:100vh;
 }
 
+/* VIDEO BACKGROUND */
+#bg-video{
+    position:fixed;
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    z-index:-2;
+}
+
+/* OVERLAY (your gradient effect stays) */
 body::before{
     content:"";
     position:fixed;
     inset:0;
+
     background:linear-gradient(
         135deg,
-        rgba(247,243,255,0.85),
-        rgba(255,247,237,0.85)
+        rgba(247,243,255,0.63),
+        rgba(255,247,237,0.63)
     );
+
     z-index:-1;
 }
 .section,
@@ -149,7 +173,7 @@ body::after{
 /* DESCRIPTION */
 .hero p{
     font-size:34px; /* increases paragraph size */
-    color:#4b5563;
+    color:#01060c;
     line-height:1.8;
     margin-bottom:35px;
     text-align:center; /* centers paragraph */
@@ -225,7 +249,7 @@ body::after{
 .section p{
     max-width:900px;
     margin:20px auto 0 auto;
-    color:#4b5563;
+    color:#030911;
     line-height:1.9;
     font-size:17px;
 }
@@ -309,7 +333,7 @@ body::after{
 }
 
 .card p{
-    color:#4b5563;
+    color:#020408;
     line-height:1.7;
 }
 
@@ -331,7 +355,7 @@ body::after{
 }
 
 .motivation p{
-    color:#374151;
+    color:#020812;
     max-width:800px;
     margin:auto;
     line-height:1.9;
@@ -391,7 +415,7 @@ footer{
 }
 
 .predictable-header p{
-    color:#7c3aed;
+    color:#05020a;
     font-size:24px;
     max-width:800px;
     margin:auto;
