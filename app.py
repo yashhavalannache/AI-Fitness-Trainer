@@ -2,7 +2,7 @@ from flask import Flask, render_template, session, redirect, url_for, request, f
 from datetime import datetime
 import cv2
 import os
-
+from app import app
 from models import db
 from models.user_model import User
 from models.fitness_model import FitnessProgress
@@ -326,4 +326,4 @@ if __name__ == '__main__':
     with app.app_context():
         db.create_all()
 
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=7860, debug=False)
