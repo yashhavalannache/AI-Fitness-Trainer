@@ -1,34 +1,37 @@
 # 🏋️ AI Fitness Trainer
 
-An intelligent fitness web application that generates personalized workouts, tracks progress, and helps users stay consistent with their fitness journey.
+The AI Fitness Trainer is a smart web-based fitness assistant designed to guide users in building a healthier and more disciplined lifestyle. It acts like a personal workout companion that removes confusion from fitness planning and makes exercise simple, structured, and consistent.
 
-Built with ❤️ using Flask, HTML, CSS, and AI-based logic to deliver a smooth and motivating fitness experience.
+Instead of randomly choosing workouts or struggling to stay motivated, users get a guided fitness experience that helps them stay on track and improve step by step.
 
+This project combines web development (Flask, HTML, CSS) with intelligent logic to simulate a personalized fitness journey. The goal is to make fitness more accessible, especially for students and busy individuals who find it difficult to maintain a routine.
+
+🌟 Vision of the Project
+The main idea behind this app is simple:
+“Fitness should not feel complicated — it should feel natural, guided, and motivating.”
 ---
 
-## 🌟 Live Preview (Optional)
+<!-- ## 🌟 Live Preview (Optional)
 > Add your deployed link here later  
-`https://your-live-app-link.com`
+`https://your-live-app-link.com` -->
 
 ---
 
-## 📸 Screenshots
+## Screenshots
 
 ### 🏠 Home Page (Index)
-![Home Page](static/images/index.jpeg)
+<p align="center">
+  <img src="static/images/index.jpeg" width="45%" />
+  <img src="static/images/login.jpeg" width="45%" />
+</p>
 
-### 🔐 Login Page
-![Login Page](static/images/login.jpeg)
+### 📝 Register + 💪 Workout
+<p align="center">
+  <img src="static/images/register.jpeg" width="45%" />
+  <img src="static/images/workout.jpeg" width="45%" />
+</p>
 
-### 📝 Register Page
-![Register Page](static/images/register.jpeg)
-
-### 💪 Workout Page
-![Workout Page](static/images/workout.jpeg)
-
----
-
-## ⚡ Features
+##  Features
 
 - 🧠 AI-based workout suggestions
 - 📊 Progress tracking system
@@ -40,7 +43,7 @@ Built with ❤️ using Flask, HTML, CSS, and AI-based logic to deliver a smooth
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 - Frontend: HTML, CSS, JavaScript
 - Backend: Flask (Python)
