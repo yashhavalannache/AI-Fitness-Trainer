@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+    <title>My Account</title>
+
+    <link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/account.css') }}">
+
+    <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+    <h2>AI FITNESS</h2>
+
+    <ul>
+
+        <li>
+
+            <a href="/dashboard">
+
+                Dashboard
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="/workout">
+
+                Workout Plan
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="/diet">
+
+                Diet Plan
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="/posture">
+
+                Posture AI
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="/account"
+            class="active">
+
+                Account
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="#"
+            id="logoutBtn">
+
+                Logout
+
+            </a>
+
+        </li>
+
+    </ul>
+
+</div>
+
+<!-- MAIN CONTENT -->
+
+<div class="main-content">
+
+    <!-- TOP BAR -->
+
+    <div class="top-bar">
+
+        <a
+        href="/dashboard"
+        class="back-btn">
+
+            ← Back
+
+        </a>
+
+        <h1>
+
+            My Profile
+
+        </h1>
+
+    </div>
+
+    <!-- ACCOUNT LAYOUT -->
+
+    <div class="account-layout">
+
+        <!-- LEFT PROFILE -->
+
+        <div class="profile-card">
+
+            <div class="profile-image-section">
+
+                <!-- PROFILE IMAGE -->
+
+                <img
+                id="profilePreview"
+                class="avatar"
+                src="{{ url_for(
+                'static',
+                filename='uploads/' + (
+                user.profile_pic
+                if user.profile_pic
+                else 'default-avatar.png'
+                )) }}"
+                alt="Profile Picture">
+
+                <!-- UPLOAD FORM -->
+
+                <form
+                id="uploadForm"
+                method="POST"
+                action="{{ url_for('upload_profile_pic') }}"
+                enctype="multipart/form-data">
+
+                    <input
+                    type="file"
+                    id="profileInput"
+                    name="profile_pic"
+                    accept="image/*"
+                    hidden>
+
+                    <label
+                    for="profileInput"
+                    class="custom-upload">
+
+                        Choose Profile Photo
+
+                    </label>
+
+                    <p id="fileName">
+
+                        No image selected
+
+                    </p>
+
+                </form>
+
+            </div>
+
+            <!-- PROFILE DETAILS -->
+
+            <div class="profile-details">
+
+                <h2>{{ user.name }}</h2>
+
+                <p class="member-tag">
+
+                    AI Fitness Member 🚀
+
+                </p>
+
+                <!-- STATS -->
+
+                <div class="stats">
+
+                    <div class="stat-box">
+
+                        <h3>{{ user.age }}</h3>
+
+                        <p>Age</p>
+
+                    </div>
+
+                    <div class="stat-box">
+
+                        <h3>{{ user.weight }}</h3>
+
+                        <p>Weight</p>
+
+                    </div>
+
+                    <div class="stat-box">
+
+                        <h3>{{ user.height }}</h3>
+
+                        <p>Height</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- RIGHT SIDE -->
+
+        <div class="details-card">
+
+            <div class="section-title">
+
+                <h2>
+
+                    Account Details ⚡
+
+                </h2>
+
+                <p>
+
+                    Update your fitness identity and goals
+
+                </p>
+
+            </div>
+
+            <!-- UPDATE FORM -->
+
+            <form
+            method="POST"
+            action="/update_account">
+
+                <div class="form-grid">
+
+                    <div class="input-box">
+
+                        <label>Full Name</label>
+
+                        <input
+                        type="text"
+                        name="name"
+                        value="{{ user.name }}"
+                        required>
+
+                    </div>
+
+                    <div class="input-box">
+
+                        <label>Age</label>
+
+                        <input
+                        type="number"
+                        name="age"
+                        value="{{ user.age }}"
+                        required>
+
+                    </div>
+
+                    <div class="input-box">
+
+                        <label>Weight (kg)</label>
+
+                        <input
+                        type="number"
+                        step="0.1"
+                        name="weight"
+                        value="{{ user.weight }}"
+                        required>
+
+                    </div>
+
+                    <div class="input-box">
+
+                        <label>Height (cm)</label>
+
+                        <input
+                        type="number"
+                        step="0.1"
+                        name="height"
+                        value="{{ user.height }}"
+                        required>
+
+                    </div>
+
+                    <div class="input-box full-width">
+
+                        <label>Fitness Goal</label>
+
+                        <select name="goal">
+
+                            <option
+                            value="weight_loss"
+                            {% if user.goal == "weight_loss" %}
+                            selected
+                            {% endif %}>
+
+                                Weight Loss 🔥
+
+                            </option>
+
+                            <option
+                            value="muscle_gain"
+                            {% if user.goal == "muscle_gain" %}
+                            selected
+                            {% endif %}>
+
+                                Muscle Gain 💪
+
+                            </option>
+
+                            <option
+                            value="maintenance"
+                            {% if user.goal == "maintenance" %}
+                            selected
+                            {% endif %}>
+
+                                Maintenance ⚖️
+
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+                <button
+                type="submit"
+                class="save-btn">
+
+                    Save Changes ✨
+
+                </button>
+
+            </form>
+
+            <!-- DANGER ZONE -->
+
+            <div class="danger-zone">
+
+                <h3>
+
+                    Danger Zone ⚠️
+
+                </h3>
+
+                <p>
+
+                    Deleting your account will permanently remove all fitness data.
+
+                </p>
+
+                <button
+                type="button"
+                class="delete-btn"
+                id="deleteBtn">
+
+                    Delete Account 🗑️
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- LOGOUT POPUP -->
+
+<div
+class="logout-popup"
+id="logoutPopup">
+
+    <div class="logout-box">
+
+        <h2>
+
+            Logout?
+
+        </h2>
+
+        <p>
+
+            Are you sure you want to leave your fitness grind?
+
+        </p>
+
+        <div class="logout-actions">
+
+            <button
+            id="cancelLogout"
+            class="cancel-btn">
+
+                Cancel
+
+            </button>
+
+            <a
+            href="/logout"
+            class="confirm-btn">
+
+                Yes Logout
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- DELETE ACCOUNT POPUP -->
+
+<div
+class="logout-popup"
+id="deletePopup">
+
+    <div class="logout-box">
+
+        <h2>
+
+            Delete Account?
+
+        </h2>
+
+        <p>
+
+            This action is permanent and all your fitness data will be lost forever⚠️
+
+        </p>
+
+        <div class="logout-actions">
+
+            <button
+            id="cancelDelete"
+            class="cancel-btn">
+
+                Cancel
+
+            </button>
+
+            <form
+            method="POST"
+            action="/delete_account">
+
+                <button
+                type="submit"
+                class="confirm-btn">
+
+                    Yes Delete
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+/* =========================
+   PROFILE IMAGE PREVIEW
+========================= */
+
+const profileInput =
+document.getElementById("profileInput");
+
+const profilePreview =
+document.getElementById("profilePreview");
+
+const fileName =
+document.getElementById("fileName");
+
+const uploadForm =
+document.getElementById("uploadForm");
+
+profileInput.addEventListener("change", function(){
+
+    const file = this.files[0];
+
+    if(file){
+
+        fileName.textContent =
+        "Selected: " + file.name;
+
+        const reader =
+        new FileReader();
+
+        reader.onload = function(e){
+
+            profilePreview.src =
+            e.target.result;
+
+        };
+
+        reader.readAsDataURL(file);
+
+        setTimeout(() => {
+
+            uploadForm.submit();
+
+        }, 500);
+
+    }
+
+});
+
+/* =========================
+   PREVENT IMAGE CACHE
+========================= */
+
+window.addEventListener("load", () => {
+
+    const avatar =
+    document.getElementById("profilePreview");
+
+    avatar.src =
+    avatar.src.split("?")[0] +
+    "?t=" + new Date().getTime();
+
+});
+
+/* =========================
+   LOGOUT POPUP
+========================= */
+
+const logoutBtn =
+document.getElementById("logoutBtn");
+
+const logoutPopup =
+document.getElementById("logoutPopup");
+
+const cancelLogout =
+document.getElementById("cancelLogout");
+
+logoutBtn.addEventListener("click", function(e){
+
+    e.preventDefault();
+
+    logoutPopup.classList.add("active");
+
+});
+
+cancelLogout.addEventListener("click", function(){
+
+    logoutPopup.classList.remove("active");
+
+});
+
+logoutPopup.addEventListener("click", function(e){
+
+    if(e.target === logoutPopup){
+
+        logoutPopup.classList.remove("active");
+
+    }
+
+});
+
+/* =========================
+   DELETE ACCOUNT POPUP
+========================= */
+
+const deleteBtn =
+document.getElementById("deleteBtn");
+
+const deletePopup =
+document.getElementById("deletePopup");
+
+const cancelDelete =
+document.getElementById("cancelDelete");
+
+deleteBtn.addEventListener("click", function(){
+
+    deletePopup.classList.add("active");
+
+});
+
+cancelDelete.addEventListener("click", function(){
+
+    deletePopup.classList.remove("active");
+
+});
+
+deletePopup.addEventListener("click", function(e){
+
+    if(e.target === deletePopup){
+
+        deletePopup.classList.remove("active");
+
+    }
+
+});
+
+/* =========================
+   STOP CAMERA
+========================= */
+
+window.addEventListener("beforeunload", function () {
+
+    navigator.sendBeacon("/stop_camera");
+
+});
+
+</script>
+
+</body>
+
+</html>

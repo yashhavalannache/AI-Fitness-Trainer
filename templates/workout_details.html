@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ day }} Workout</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/workout.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+    <h2>AI FITNESS</h2>
+    <ul>
+        <li>
+    <a href="/dashboard"
+    class="{% if active_page == 'dashboard' %}active{% endif %}">
+        Dashboard
+    </a>
+</li>
+
+<li>
+    <a href="/workout"
+    class="{% if active_page == 'workout' %}active{% endif %}">
+        Workout Plan
+    </a>
+</li>
+
+<li>
+    <a href="/diet"
+    class="{% if active_page == 'diet' %}active{% endif %}">
+        Diet Plan
+    </a>
+</li>
+
+<li>
+    <a href="/posture"
+    class="{% if active_page == 'posture' %}active{% endif %}">
+        Posture AI
+    </a>
+</li>
+
+<li>
+    <a href="/account"
+    class="{% if active_page == 'account' %}active{% endif %}">
+        Account
+    </a>
+</li>
+
+<li>
+    <a href="/logout">
+        Logout
+    </a>
+</li>
+    </ul>
+</div>
+
+<!-- MAIN -->
+<div class="main-content">
+
+    <!-- HERO -->
+    <div class="hero-section">
+        <h1>{{ day }} — {{ details.title }} 🔥</h1>
+        <p>{{ details.description }}</p>
+    </div>
+
+    <!-- EXERCISES -->
+    <div class="exercise-grid">
+
+        {% for ex in details.exercises %}
+
+        <div class="exercise-card">
+
+            <div class="exercise-top">
+                <h2>{{ ex.name }}</h2>
+
+                <span class="badge">
+                    {{ ex.sets }}
+                </span>
+            </div>
+
+            <p class="benefit">
+                {{ ex.benefit }}
+            </p>
+
+            {% if ex.video %}
+            <div class="exercise-video">
+                <iframe
+                    width="100%"
+                    height="220"
+                    src="{{ ex.video }}"
+                    frameborder="0"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            {% endif %}
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+    <!-- MOTIVATION -->
+    <div class="motivation-box">
+        <h2>Push Beyond Limits 🚀</h2>
+        <p>
+            Discipline builds muscle.  
+            Consistency builds champions.  
+            Every rep is a future version of you.
+        </p>
+    </div>
+
+</div>
+
+</body>
+</html>

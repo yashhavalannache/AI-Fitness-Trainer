@@ -1,0 +1,1375 @@
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+/* =========================
+   BODY
+========================= */
+
+body{
+    background:url("/static/images/allbg.jpeg") no-repeat center center fixed;
+    background-size:cover;
+
+    color:#1f2937;
+
+    display:flex;
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+}
+
+/* LIGHT OVERLAY */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+
+    background:linear-gradient(
+        135deg,
+        rgba(247,243,255,0.75),
+        rgba(255,247,237,0.75)
+    );
+
+    z-index:-5;
+}
+
+/* GLOW EFFECT */
+
+body::after{
+    content:"";
+
+    position:fixed;
+
+    bottom:-120px;
+    right:-120px;
+
+    width:500px;
+    height:500px;
+
+    background:radial-gradient(
+        circle,
+        #fdba74,
+        transparent 60%
+    );
+
+    filter:blur(90px);
+
+    z-index:-1;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar{
+    width:260px;
+    height:100vh;
+
+    position:fixed;
+    left:0;
+    top:0;
+
+    background:rgba(255,255,255,0.72);
+
+    backdrop-filter:blur(18px);
+
+    border-right:1px solid rgba(124,58,237,0.12);
+
+    padding:35px 20px;
+
+    box-shadow:0 0 30px rgba(0,0,0,0.06);
+}
+
+/* LOGO */
+
+.sidebar h2{
+    text-align:center;
+
+    font-size:30px;
+
+    margin-bottom:45px;
+
+    font-weight:800;
+
+    letter-spacing:2px;
+
+    background:linear-gradient(
+        135deg,
+        #a78bfa,
+        #f97316
+    );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+/* MENU */
+
+.sidebar ul{
+    list-style:none;
+}
+
+.sidebar ul li{
+    margin:18px 0;
+}
+
+/* LINKS */
+
+.sidebar ul li a{
+
+    display:block;
+
+    padding:15px 18px;
+
+    text-decoration:none;
+
+    color:#4c1d95;
+
+    font-weight:600;
+
+    border-radius:16px;
+
+    transition:0.3s;
+}
+
+/* HOVER */
+
+.sidebar ul li a:hover,
+.sidebar ul li a.active{
+
+    background:linear-gradient(
+        135deg,
+        #a78bfa,
+        #f97316
+    );
+
+    color:white;
+
+    transform:translateX(6px);
+
+    box-shadow:0 12px 25px rgba(124,58,237,0.2);
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.main-content{
+    margin-left:260px;
+
+    width:100%;
+
+    padding:45px;
+}
+
+/* =========================
+   TOP BAR
+========================= */
+
+.top-bar{
+    display:flex;
+
+    align-items:center;
+
+    gap:25px;
+
+    margin-bottom:40px;
+}
+
+.top-bar h1{
+
+    font-size:48px;
+
+    color:#4c1d95;
+
+    font-weight:800;
+
+    text-shadow:0 5px 20px rgba(124,58,237,0.1);
+}
+
+/* =========================
+   BACK BUTTON
+========================= */
+
+.back-btn{
+
+    text-decoration:none;
+
+    padding:12px 22px;
+
+    border-radius:16px;
+
+    background:rgba(255,255,255,0.7);
+
+    border:1px solid rgba(124,58,237,0.15);
+
+    color:#38078c;
+
+    font-weight:600;
+
+    transition:0.3s;
+}
+
+.back-btn:hover{
+
+    background:linear-gradient(
+        135deg,
+        #a78bfa,
+        #f97316
+    );
+
+    color:white;
+
+    transform:translateY(-3px);
+
+    box-shadow:0 12px 24px rgba(249,115,22,0.2);
+}
+
+/* =========================
+   ACCOUNT LAYOUT
+========================= */
+
+.account-layout{
+
+    display:grid;
+
+    grid-template-columns:350px 1fr;
+
+    gap:35px;
+}
+
+/* =========================
+   PROFILE CARD
+========================= */
+
+.profile-card{
+
+    background:rgba(255,255,255,0.78);
+
+    backdrop-filter:blur(15px);
+
+    border-radius:30px;
+
+    padding:35px;
+
+    border:1px solid rgba(124,58,237,0.12);
+
+    box-shadow:0 15px 35px rgba(0,0,0,0.06);
+
+    height:fit-content;
+}
+
+.profile-image-section{
+    text-align:center;
+}
+
+/* =========================
+   UPLOAD PHOTO BUTTON
+========================= */
+
+.custom-upload{
+
+    display:inline-block;
+
+    padding:14px 28px;
+
+    margin-top:10px;
+
+    border-radius:16px;
+
+    background:linear-gradient(
+        135deg,
+        #6661f7,
+        #030100
+    );
+
+    color:white;
+
+    font-weight:600;
+
+    font-size:15px;
+
+    cursor:pointer;
+
+    transition:0.3s ease;
+
+    box-shadow:
+    0 12px 25px rgba(124,58,237,0.25);
+
+    border:none;
+}
+
+/* HOVER EFFECT */
+
+.custom-upload:hover{
+
+    transform:translateY(-3px) scale(1.03);
+
+    box-shadow:
+    0 18px 35px rgba(249,115,22,0.28);
+}
+
+/* FILE NAME */
+
+#fileName{
+
+    margin-top:15px;
+
+    font-size:14px;
+
+    color:#4b5563;
+
+    font-weight:500;
+}
+
+
+
+/* =========================
+   AVATAR
+========================= */
+
+.avatar{
+
+    width:220px;
+
+    height:220px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:6px solid #070707ca;
+
+    margin-bottom:25px;
+
+    background:white;
+
+    box-shadow:
+    0 0 35px rgba(167,139,250,0.35),
+    0 0 70px rgba(249,115,22,0.18);
+
+    transition:all 0.35s ease;
+}
+
+.avatar:hover{
+
+    transform:scale(1.04);
+
+    box-shadow:
+    0 0 45px rgba(167,139,250,0.45),
+    0 0 80px rgba(249,115,22,0.25);
+}
+
+/* =========================
+   PROFILE DETAILS
+========================= */
+
+.profile-details{
+
+    margin-top:30px;
+
+    text-align:center;
+}
+
+.profile-details h2{
+
+    font-size:34px;
+
+    margin-bottom:10px;
+
+    color:#080808;
+}
+
+.member-tag{
+
+    color:#6b7280;
+
+    margin-bottom:30px;
+
+    font-size:15px;
+}
+
+/* =========================
+   STATS
+========================= */
+
+.stats{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:15px;
+}
+
+.stat-box{
+
+    background:rgba(214, 209, 232, 0.85);
+
+    padding:18px;
+
+    border-radius:18px;
+
+    border:1px solid rgba(124,58,237,0.1);
+
+    transition:0.3s;
+}
+
+.stat-box:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 15px 30px rgba(124,58,237,0.1);
+}
+
+.stat-box h3{
+
+    color:#030008;
+
+    font-size:24px;
+}
+
+.stat-box p{
+
+    color:#6b7280;
+
+    margin-top:5px;
+
+    font-size:14px;
+}
+
+/* =========================
+   DETAILS CARD
+========================= */
+
+.details-card{
+
+    background:rgba(255, 255, 255, 0.78);
+
+    backdrop-filter:blur(15px);
+
+    border-radius:30px;
+
+    padding:40px;
+
+    border:1px solid rgba(124,58,237,0.12);
+
+    box-shadow:0 15px 35px rgba(0,0,0,0.06);
+}
+
+/* =========================
+   SECTION TITLE
+========================= */
+
+.section-title h2{
+
+    color:#080114;
+
+    font-size:38px;
+
+    margin-bottom:10px;
+}
+
+.section-title p{
+
+    color:#5b5d61;
+
+    margin-bottom:35px;
+}
+
+/* =========================
+   FORM GRID
+========================= */
+
+.form-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:25px;
+}
+
+.full-width{
+    grid-column:span 2;
+}
+
+/* =========================
+   INPUTS
+========================= */
+
+.input-box label{
+
+    display:block;
+
+    margin-bottom:10px;
+
+    color:#080212;
+
+    font-weight:600;
+}
+
+.input-box input,
+.input-box select{
+
+    width:100%;
+
+    padding:16px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:16px;
+
+    background:white;
+
+    color:#374151;
+
+    border:1px solid rgba(124,58,237,0.12);
+
+    transition:0.3s;
+}
+
+.input-box input:focus,
+.input-box select:focus{
+
+    border:1px solid #a78bfa;
+
+    box-shadow:0 0 18px rgba(167,139,250,0.2);
+}
+
+/* =========================
+   SAVE BUTTON
+========================= */
+
+.save-btn{
+
+    margin-top:35px;
+
+    width:100%;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:linear-gradient(
+        135deg,
+        #06f89f,
+        #b0dd4d
+    );
+
+    color:rgb(12, 12, 12);
+
+    font-size:18px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.save-btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 15px 30px rgba(249,115,22,0.25);
+}
+
+/* =========================
+   DANGER ZONE
+========================= */
+
+.danger-zone{
+
+    margin-top:45px;
+
+    border-top:1px solid rgba(124,58,237,0.12);
+
+    padding-top:35px;
+}
+
+.danger-zone h3{
+
+    color:#dc2626;
+
+    margin-bottom:12px;
+
+    font-size:24px;
+}
+
+.danger-zone p{
+
+    color:#6b7280;
+
+    margin-bottom:20px;
+}
+
+/* =========================
+   DELETE BUTTON
+========================= */
+
+.delete-btn{
+
+    width:100%;
+
+    padding:16px;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:linear-gradient(
+        135deg,
+        #ef4444,
+        #dc2626
+    );
+
+    color:white;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.delete-btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 15px 30px rgba(239,68,68,0.25);
+}
+
+/* =========================
+   CUSTOM IMAGE UPLOAD
+========================= */
+
+.custom-upload{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    width:100%;
+
+    padding:16px 20px;
+
+    margin-top:12px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    cursor:pointer;
+
+    font-weight:700;
+
+    font-size:15px;
+
+    letter-spacing:0.3px;
+
+    color:white;
+
+    background:linear-gradient(
+        135deg,
+        #8b5cf6,
+        #f97316
+    );
+
+    transition:all 0.3s ease;
+
+    box-shadow:
+    0 12px 30px rgba(249,115,22,0.18);
+}
+
+.custom-upload:hover{
+
+    transform:translateY(-5px) scale(1.02);
+
+    box-shadow:
+    0 18px 35px rgba(249,115,22,0.25);
+}
+
+/* FILE NAME */
+
+#fileName{
+
+    margin-top:18px;
+
+    color:#6b7280;
+
+    font-size:14px;
+
+    font-weight:500;
+
+    text-align:center;
+
+    min-height:20px;
+}
+
+/* =========================
+   FLASH MESSAGES
+========================= */
+
+.flash-message{
+
+    padding:16px 20px;
+
+    border-radius:18px;
+
+    margin-bottom:25px;
+
+    font-weight:600;
+
+    text-align:center;
+
+    animation:fadeIn 0.4s ease;
+
+    backdrop-filter:blur(10px);
+}
+
+.flash-message.success{
+
+    background:rgba(34,197,94,0.14);
+
+    color:#15803d;
+
+    border:1px solid rgba(34,197,94,0.25);
+
+    box-shadow:0 8px 25px rgba(34,197,94,0.08);
+}
+
+.flash-message.error{
+
+    background:rgba(239,68,68,0.12);
+
+    color:#dc2626;
+
+    border:1px solid rgba(239,68,68,0.25);
+
+    box-shadow:0 8px 25px rgba(239,68,68,0.08);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1100px){
+
+    .account-layout{
+        grid-template-columns:1fr;
+    }
+
+    .profile-card{
+        width:100%;
+    }
+}
+
+@media(max-width:768px){
+
+    .sidebar{
+        display:none;
+    }
+
+    .main-content{
+        margin-left:0;
+        padding:20px;
+    }
+
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .full-width{
+        grid-column:span 1;
+    }
+
+    .stats{
+        grid-template-columns:1fr;
+    }
+
+    .top-bar h1{
+        font-size:34px;
+    }
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+        transform:translateY(-10px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes fadeOut{
+
+    to{
+        opacity:0;
+        transform:translateY(-10px);
+    }
+}
+
+/* =========================
+   SMOOTH IMAGE FADE
+========================= */
+
+#profilePreview{
+
+    transition:0.4s ease;
+}
+
+/* =========================
+   AUTO HIDE FLASH
+========================= */
+
+.flash-message{
+
+    animation:
+    fadeIn 0.4s ease,
+    fadeOut 0.4s ease 3.5s forwards;
+}
+
+/* =========================
+   LOGOUT MODAL
+========================= */
+
+.logout-popup{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    background:rgba(0,0,0,0.45);
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:0.3s ease;
+
+    z-index:9999;
+}
+
+/* SHOW POPUP */
+
+.logout-popup.active{
+
+    opacity:1;
+    visibility:visible;
+}
+
+/* POPUP BOX */
+
+.logout-box{
+
+    width:400px;
+
+    background:white;
+
+    border-radius:25px;
+
+    padding:35px;
+
+    text-align:center;
+
+    box-shadow:0 20px 40px rgba(0,0,0,0.2);
+
+    animation:popupScale 0.3s ease;
+}
+
+/* TITLE */
+
+.logout-box h2{
+
+    color:#4c1d95;
+
+    font-size:32px;
+
+    margin-bottom:15px;
+}
+
+/* TEXT */
+
+.logout-box p{
+
+    color:#6b7280;
+
+    margin-bottom:30px;
+
+    font-size:16px;
+}
+
+/* BUTTON AREA */
+
+.logout-actions{
+
+    display:flex;
+
+    gap:15px;
+}
+
+/* BUTTONS */
+
+.cancel-btn,
+.confirm-btn{
+
+    flex:1;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:14px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    text-decoration:none;
+
+    transition:0.3s;
+}
+
+/* NO BUTTON */
+
+.cancel-btn{
+
+    background:#e5e7eb;
+
+    color:#374151;
+}
+
+.cancel-btn:hover{
+
+    background:#d1d5db;
+}
+
+/* YES BUTTON */
+
+.confirm-btn{
+
+    background:linear-gradient(
+        135deg,
+        #ef4444,
+        #dc2626
+    );
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+}
+
+.confirm-btn:hover{
+
+    transform:translateY(-2px);
+}
+
+/* ANIMATION */
+
+@keyframes popupScale{
+
+    from{
+
+        transform:scale(0.7);
+        opacity:0;
+    }
+
+    to{
+
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+/* =========================
+   POPUP OVERLAY
+========================= */
+
+.logout-popup,
+.delete-popup{
+
+    position:fixed;
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    background:rgba(0,0,0,0.55);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:0.3s ease;
+
+    z-index:9999;
+}
+
+/* SHOW POPUP */
+
+.logout-popup.active,
+.delete-popup.active{
+
+    opacity:1;
+    visibility:visible;
+}
+
+/* =========================
+   POPUP BOX
+========================= */
+
+.logout-box,
+.delete-box{
+
+    width:90%;
+    max-width:420px;
+
+    background:rgba(255,255,255,0.95);
+
+    backdrop-filter:blur(12px);
+
+    border-radius:25px;
+
+    padding:35px;
+
+    text-align:center;
+
+    border:1px solid rgba(124,58,237,0.15);
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,0.25);
+
+    transform:scale(0.9);
+
+    transition:0.3s ease;
+}
+
+/* SMOOTH ANIMATION */
+
+.logout-popup.active .logout-box,
+.delete-popup.active .delete-box{
+
+    transform:scale(1);
+}
+
+/* =========================
+   POPUP TITLE
+========================= */
+
+.logout-box h2,
+.delete-box h2{
+
+    color:#4c1d95;
+
+    font-size:30px;
+
+    margin-bottom:15px;
+}
+
+/* TEXT */
+
+.logout-box p,
+.delete-box p{
+
+    color:#4b5563;
+
+    font-size:17px;
+
+    line-height:1.7;
+
+    margin-bottom:30px;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.logout-actions,
+.delete-actions{
+
+    display:flex;
+    justify-content:center;
+    gap:15px;
+}
+
+/* CANCEL BUTTON */
+
+.cancel-btn{
+
+    padding:12px 24px;
+
+    border:none;
+    border-radius:14px;
+
+    background:#e5e7eb;
+
+    color:#111827;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.cancel-btn:hover{
+
+    background:#d1d5db;
+
+    transform:translateY(-2px);
+}
+
+/* CONFIRM BUTTON */
+
+.confirm-btn{
+
+    display:inline-block;
+
+    padding:12px 24px;
+
+    border-radius:14px;
+
+    text-decoration:none;
+
+    background:linear-gradient(
+        135deg,
+        #a78bfa,
+        #f97316
+    );
+
+    color:white;
+
+    font-weight:600;
+
+    transition:0.3s;
+}
+
+.confirm-btn:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:
+    0 12px 25px rgba(124,58,237,0.25);
+}
+
+/* DELETE BUTTON */
+
+.delete-confirm-btn{
+
+    display:inline-block;
+
+    padding:12px 24px;
+
+    border:none;
+    border-radius:14px;
+
+    text-decoration:none;
+
+    background:linear-gradient(
+        135deg,
+        #ef4444,
+        #dc2626
+    );
+
+    color:white;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.delete-confirm-btn:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:
+    0 12px 25px rgba(239,68,68,0.3);
+}
+
+/* =========================
+   RESPONSIVE FIX LAYER
+   (DO NOT MODIFY EXISTING CSS)
+========================= */
+
+/* Large Tablets */
+@media (max-width: 1100px){
+
+    .account-layout{
+        grid-template-columns:1fr !important;
+    }
+
+    .stats{
+        grid-template-columns:1fr 1fr !important;
+    }
+}
+
+/* Tablets */
+@media (max-width: 900px){
+
+    .sidebar{
+        width:220px !important;
+    }
+
+    .main-content,
+    .main,
+    .container{
+        margin-left:220px !important;
+        padding:25px !important;
+        width:calc(100% - 220px) !important;
+    }
+
+    .hero-section h1,
+    .main-card h1{
+        font-size:34px !important;
+    }
+
+    .form-grid{
+        grid-template-columns:1fr !important;
+    }
+
+    .full-width{
+        grid-column:span 1 !important;
+    }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px){
+
+    /* Hide sidebar */
+    .sidebar{
+        display:none !important;
+    }
+
+    /* Full width content */
+    .main-content,
+    .main,
+    .container{
+        margin-left:0 !important;
+        width:100% !important;
+        padding:18px !important;
+    }
+
+    /* Text scaling */
+    h1, .hero-section h1, .main-card h1{
+        font-size:28px !important;
+    }
+
+    h2{
+        font-size:22px !important;
+    }
+
+    p{
+        font-size:15px !important;
+    }
+
+    /* Grid collapse */
+    .cards,
+    .workout-grid,
+    .exercise-grid,
+    .diet-cards,
+    .progress-cards,
+    .workout-cards{
+        grid-template-columns:1fr !important;
+    }
+
+    /* Buttons full width */
+    .exercise-buttons a,
+    form button,
+    .complete-btn,
+    .start-btn{
+        width:100% !important;
+        text-align:center !important;
+    }
+
+    /* Inputs fix */
+    form input{
+        width:100% !important;
+        margin-bottom:10px !important;
+    }
+
+    /* Profile stats */
+    .stats{
+        grid-template-columns:1fr !important;
+    }
+
+    /* Video fix */
+    .video-feed{
+        width:100% !important;
+        max-width:100% !important;
+    }
+
+    /* Account layout */
+    .account-layout{
+        grid-template-columns:1fr !important;
+    }
+}
+
+/* Small phones */
+@media (max-width: 480px){
+
+    .main-content,
+    .main,
+    .container{
+        padding:12px !important;
+    }
+
+    h1{
+        font-size:24px !important;
+    }
+
+    .card,
+    .workout-card,
+    .diet-card,
+    .exercise-card{
+        padding:18px !important;
+    }
+
+    .logout-box,
+    .delete-box{
+        width:90% !important;
+        padding:25px !important;
+    }
+}

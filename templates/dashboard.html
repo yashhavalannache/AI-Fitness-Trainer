@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard</title>
+
+    <!-- Fonts -->
+
+    <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+    <!-- CSS -->
+
+    <link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/dashboard.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+    <h2>AI FITNESS</h2>
+
+    <ul>
+
+        <li>
+
+            <a href="/dashboard"
+            class="{% if active_page == 'dashboard' %}active{% endif %}">
+
+                Dashboard
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="/workout"
+            class="{% if active_page == 'workout' %}active{% endif %}">
+
+                Workout Plan
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="/diet"
+            class="{% if active_page == 'diet' %}active{% endif %}">
+
+                Diet Plan
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="/posture"
+            class="{% if active_page == 'posture' %}active{% endif %}">
+
+                Posture AI
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="/account"
+            class="{% if active_page == 'account' %}active{% endif %}">
+
+                Account
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="#"
+            id="logoutBtn">
+
+                Logout
+
+            </a>
+
+        </li>
+
+    </ul>
+
+</div>
+
+<!-- MAIN CONTENT -->
+
+<div class="main-content">
+
+    <h1>
+
+        Welcome, {{ user.name }} 🔥
+
+    </h1>
+
+    <!-- COMPLETE WORKOUT -->
+
+    <form
+    action="/complete_workout"
+    method="POST">
+
+        <button
+        class="complete-btn"
+        type="submit">
+
+            Complete Today's Workout 🔥
+
+        </button>
+
+    </form>
+
+    <!-- ANALYTICS -->
+
+    <div class="analytics-section">
+
+        <h2>Fitness Analytics 📊</h2>
+
+        <div class="chart-container">
+
+            <canvas id="fitnessChart"></canvas>
+
+        </div>
+
+    </div>
+
+    <!-- CARDS -->
+
+    <div class="cards">
+
+        <div class="card">
+
+            <h2>BMI</h2>
+
+            <p>{{ bmi }}</p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>Daily Calories</h2>
+
+            <p>{{ calories }} kcal</p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>Fitness Goal</h2>
+
+            <p>{{ user.goal }}</p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>Fitness Level</h2>
+
+            <p>{{ user.level }}</p>
+
+        </div>
+
+    </div>
+
+    <!-- PROGRESS -->
+
+    <div class="progress-section">
+
+        <h2>Your Fitness Progress 📈</h2>
+
+        <div class="progress-cards">
+
+            <div class="progress-card">
+
+                <h3>Workout Streak 🔥</h3>
+
+                <p>{{ progress.streak_days }} Days</p>
+
+            </div>
+
+            <div class="progress-card">
+
+                <h3>Workouts Completed 🏋️</h3>
+
+                <p>{{ progress.workouts_completed }}</p>
+
+            </div>
+
+            <div class="progress-card">
+
+                <h3>Fitness Score ⚡</h3>
+
+                <p>{{ progress.fitness_score }}/100</p>
+
+            </div>
+
+            <div class="progress-card">
+
+                <h3>Calories Burned 🔥</h3>
+
+                <p>{{ progress.calories_burned }}</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- LOGOUT POPUP -->
+
+<div
+class="logout-popup"
+id="logoutPopup">
+
+    <div class="logout-box">
+
+        <h2>Logout?</h2>
+
+        <p>
+
+            Are you sure you want to leave your fitness grind? 
+
+        </p>
+
+        <div class="logout-actions">
+
+            <button
+            id="cancelLogout"
+            class="cancel-btn">
+
+                Cancel
+
+            </button>
+
+            <a
+            href="/logout"
+            class="confirm-btn">
+
+                Yes Logout
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- CHART JS -->
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+
+const ctx =
+document.getElementById('fitnessChart');
+
+new Chart(ctx, {
+
+    type: 'line',
+
+    data: {
+
+        labels: [
+            'Mon',
+            'Tue',
+            'Wed',
+            'Thu',
+            'Fri',
+            'Sat',
+            'Sun'
+        ],
+
+        datasets: [{
+
+            label: 'Calories Burned',
+
+            data: [
+                200,
+                400,
+                350,
+                500,
+                650,
+                700,
+                850
+            ],
+
+            borderColor: '#38bdf8',
+
+            backgroundColor:
+            'rgba(56,189,248,0.2)',
+
+            tension: 0.4,
+
+            fill: true
+
+        }]
+    },
+
+    options: {
+
+        responsive: true,
+
+        plugins: {
+
+            legend: {
+
+                labels: {
+
+                    color: 'white'
+
+                }
+
+            }
+
+        },
+
+        scales: {
+
+            x: {
+
+                ticks: {
+
+                    color: 'white'
+
+                }
+
+            },
+
+            y: {
+
+                ticks: {
+
+                    color: 'white'
+
+                }
+
+            }
+
+        }
+
+    }
+
+});
+
+</script>
+
+<!-- LOGOUT POPUP SCRIPT -->
+
+<script>
+
+/* =========================
+   LOGOUT POPUP
+========================= */
+
+const logoutBtn =
+document.getElementById("logoutBtn");
+
+const logoutPopup =
+document.getElementById("logoutPopup");
+
+const cancelLogout =
+document.getElementById("cancelLogout");
+
+/* OPEN POPUP */
+
+logoutBtn.addEventListener("click", function(e){
+
+    e.preventDefault();
+
+    logoutPopup.classList.add("active");
+
+});
+
+/* CLOSE POPUP */
+
+cancelLogout.addEventListener("click", function(){
+
+    logoutPopup.classList.remove("active");
+
+});
+
+/* CLOSE IF CLICK OUTSIDE */
+
+logoutPopup.addEventListener("click", function(e){
+
+    if(e.target === logoutPopup){
+
+        logoutPopup.classList.remove("active");
+
+    }
+
+});
+
+</script>
+
+<!-- STOP CAMERA -->
+
+<script>
+
+window.addEventListener(
+"beforeunload",
+function () {
+
+    navigator.sendBeacon("/stop_camera");
+
+});
+
+</script>
+
+</body>
+</html>

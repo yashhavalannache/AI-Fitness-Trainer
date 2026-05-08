@@ -1,0 +1,852 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+/* =========================
+   BODY
+========================= */
+
+body{
+    background:url("/static/images/allbg.jpeg") no-repeat center center fixed;
+    background-size:cover;
+
+    color:#1f2937;
+
+    display:flex;
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+}
+
+/* LIGHT OVERLAY */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+
+    background:linear-gradient(
+        135deg,
+        rgba(247,243,255,0.75),
+        rgba(255,247,237,0.75)
+    );
+
+    z-index:-5;
+}
+
+/* =========================
+   BACKGROUND GLOW
+========================= */
+
+body::after{
+    content:"";
+    position:fixed;
+    bottom:-120px;
+    right:-120px;
+    width:500px;
+    height:500px;
+    background:radial-gradient(circle,#fdba74,transparent 60%);
+    filter:blur(90px);
+    z-index:-1;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar{
+    width:260px;
+    height:100vh;
+    position:fixed;
+    left:0;
+    top:0;
+
+    padding:40px 20px;
+
+    background:rgba(255,255,255,0.75);
+
+    backdrop-filter:blur(16px);
+
+    border-right:1px solid rgba(124,58,237,0.12);
+
+    box-shadow:0 0 30px rgba(0,0,0,0.05);
+}
+
+/* LOGO */
+
+.sidebar h2{
+
+    text-align:center;
+
+    font-size:30px;
+
+    margin-bottom:45px;
+
+    font-weight:800;
+
+    letter-spacing:2px;
+
+    background:linear-gradient(
+        135deg,
+        #8b5cf6,
+        #f97316
+    );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+/* =========================
+   SIDEBAR MENU
+========================= */
+
+.sidebar ul{
+    list-style:none;
+}
+
+.sidebar ul li{
+    margin:18px 0;
+}
+
+/* LINKS */
+
+.sidebar ul li a{
+
+    display:block;
+
+    text-decoration:none;
+
+    color:#4c1d95;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    padding:14px 18px;
+
+    border-radius:16px;
+
+    transition:0.3s ease;
+}
+
+/* HOVER */
+
+.sidebar ul li a:hover{
+
+    background:linear-gradient(
+        135deg,
+        #8b5cf6,
+        #f97316
+    );
+
+    color:white;
+
+    transform:translateX(6px);
+
+    box-shadow:
+    0 12px 25px rgba(124,58,237,0.22);
+}
+
+/* ACTIVE PAGE */
+
+.sidebar ul li a.active{
+
+    background:linear-gradient(
+        135deg,
+        #8b5cf6,
+        #f97316
+    );
+
+    color:white;
+
+    transform:translateX(6px);
+
+    box-shadow:
+    0 12px 25px rgba(124,58,237,0.22);
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.main-content,
+.main{
+
+    margin-left:280px;
+
+    padding:50px;
+
+    width:100%;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero-section{
+    margin-bottom:50px;
+}
+
+.hero-section h1{
+
+    font-size:56px;
+
+    color:#4c1d95;
+
+    margin-bottom:18px;
+
+    font-weight:800;
+
+    text-align:center;
+}
+
+.hero-section p{
+
+    font-size:18px;
+
+    color:#4b5563;
+
+    max-width:950px;
+
+    line-height:1.9;
+
+    text-align:center;
+
+    margin:auto;
+}
+
+/* =========================
+   TITLES
+========================= */
+
+h1,h2,h3{
+    text-align:center;
+}
+
+.main-content h1,
+.workout-section h2{
+
+    color:#7c3aed;
+
+    margin-bottom:30px;
+
+    position:relative;
+
+    display:block;
+}
+
+/* UNDERLINE EFFECT */
+
+.workout-section h2::after{
+
+    content:"";
+
+    width:80px;
+
+    height:4px;
+
+    background:linear-gradient(
+        135deg,
+        #a78bfa,
+        #f97316
+    );
+
+    position:absolute;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    bottom:-12px;
+
+    border-radius:10px;
+}
+
+/* =========================
+   GRID LAYOUT
+========================= */
+
+.cards,
+.workout-grid,
+.workout-cards,
+.exercise-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(300px,1fr));
+
+    gap:28px;
+
+    margin-top:35px;
+}
+
+/* =========================
+   CARD STYLE
+========================= */
+
+.card,
+.workout-card,
+.exercise-card{
+
+    background:rgba(255,255,255,0.82);
+
+    border:1px solid rgba(124,58,237,0.14);
+
+    border-radius:24px;
+
+    padding:30px;
+
+    backdrop-filter:blur(14px);
+
+    box-shadow:
+    0 12px 30px rgba(0,0,0,0.05);
+
+    transition:0.35s ease;
+}
+
+/* CARD HOVER */
+
+.card:hover,
+.workout-card:hover,
+.exercise-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:
+    0 22px 45px rgba(249,115,22,0.2);
+
+    border-color:#f97316;
+}
+
+/* CARD TITLES */
+
+.card h2,
+.card h3,
+.workout-card h2,
+.workout-card h3,
+.exercise-card h3{
+
+    color:#7c3aed;
+
+    margin-bottom:12px;
+
+    font-size:24px;
+}
+
+/* CARD TEXT */
+
+.card p,
+.workout-card p,
+.exercise-card p{
+
+    color:#4b5563;
+
+    line-height:1.8;
+
+    font-size:15px;
+}
+
+/* =========================
+   EXERCISE ITEM
+========================= */
+
+.exercise-item{
+
+    background:#f5f3ff;
+
+    padding:22px;
+
+    border-radius:18px;
+
+    margin-bottom:18px;
+
+    border:1px solid rgba(124,58,237,0.1);
+
+    transition:0.3s;
+}
+
+.exercise-item:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+    0 10px 25px rgba(124,58,237,0.12);
+}
+
+/* EXERCISE TITLE */
+
+.exercise-item h4{
+
+    color:#7c3aed;
+
+    margin-bottom:10px;
+
+    font-size:20px;
+}
+
+.exercise-item p{
+
+    color:#4b5563;
+
+    line-height:1.7;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.complete-btn,
+.details-btn{
+
+    display:inline-block;
+
+    margin-top:22px;
+
+    padding:14px 24px;
+
+    background:linear-gradient(
+        135deg,
+        #a78bfa,
+        #f97316
+    );
+
+    color:white;
+
+    border:none;
+
+    border-radius:14px;
+
+    font-weight:700;
+
+    text-decoration:none;
+
+    transition:0.3s ease;
+
+    cursor:pointer;
+}
+
+/* BUTTON HOVER */
+
+.complete-btn:hover,
+.details-btn:hover{
+
+    transform:translateY(-4px) scale(1.03);
+
+    box-shadow:
+    0 15px 28px rgba(249,115,22,0.22);
+}
+
+/* =========================
+   MOTIVATION BOX
+========================= */
+
+.motivation-box{
+
+    margin-top:70px;
+
+    padding:45px;
+
+    border-radius:28px;
+
+    text-align:center;
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(237,233,254,0.9),
+        rgba(255,247,237,0.9)
+    );
+
+    border:1px solid rgba(124,58,237,0.12);
+
+    box-shadow:
+    0 12px 30px rgba(0,0,0,0.05);
+}
+
+.motivation-box h2{
+
+    font-size:38px;
+
+    color:#4c1d95;
+
+    margin-bottom:15px;
+}
+
+.motivation-box p{
+
+    font-size:18px;
+
+    color:#4b5563;
+
+    line-height:1.9;
+
+    max-width:850px;
+
+    margin:auto;
+}
+
+/* =========================
+   BACK BUTTON
+========================= */
+
+.back{
+
+    display:inline-block;
+
+    margin-top:30px;
+
+    padding:12px 22px;
+
+    border-radius:14px;
+
+    text-decoration:none;
+
+    background:rgba(255,255,255,0.85);
+
+    color:#7c3aed;
+
+    font-weight:600;
+
+    border:1px solid rgba(124,58,237,0.18);
+
+    transition:0.3s;
+}
+
+.back:hover{
+
+    background:linear-gradient(
+        135deg,
+        #a78bfa,
+        #f97316
+    );
+
+    color:white;
+
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 14px 28px rgba(249,115,22,0.18);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:900px){
+
+    .sidebar{
+        width:220px;
+    }
+
+    .main-content,
+    .main{
+        margin-left:220px;
+        padding:30px;
+    }
+}
+
+@media(max-width:768px){
+
+    .sidebar{
+        display:none;
+    }
+
+    .main-content,
+    .main{
+        margin-left:0;
+        padding:20px;
+    }
+
+    .hero-section h1{
+        font-size:38px;
+    }
+
+    .hero-section p{
+        font-size:16px;
+    }
+
+    .cards,
+    .workout-grid,
+    .workout-cards,
+    .exercise-grid{
+        grid-template-columns:1fr;
+    }
+
+    .motivation-box{
+        padding:30px 20px;
+    }
+
+    .motivation-box h2{
+        font-size:30px;
+    }
+}
+/* =========================
+   LOGOUT MODAL
+========================= */
+
+.logout-popup{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    background:rgba(0,0,0,0.45);
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:0.3s ease;
+
+    z-index:9999;
+}
+
+/* SHOW POPUP */
+
+.logout-popup.active{
+
+    opacity:1;
+    visibility:visible;
+}
+
+/* POPUP BOX */
+
+.logout-box{
+
+    width:400px;
+
+    background:white;
+
+    border-radius:25px;
+
+    padding:35px;
+
+    text-align:center;
+
+    box-shadow:0 20px 40px rgba(0,0,0,0.2);
+
+    animation:popupScale 0.3s ease;
+}
+
+/* TITLE */
+
+.logout-box h2{
+
+    color:#4c1d95;
+
+    font-size:32px;
+
+    margin-bottom:15px;
+}
+
+/* TEXT */
+
+.logout-box p{
+
+    color:#6b7280;
+
+    margin-bottom:30px;
+
+    font-size:16px;
+}
+
+/* BUTTON AREA */
+
+.logout-actions{
+
+    display:flex;
+
+    gap:15px;
+}
+
+/* BUTTONS */
+
+.cancel-btn,
+.confirm-btn{
+
+    flex:1;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:14px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    text-decoration:none;
+
+    transition:0.3s;
+}
+
+/* NO BUTTON */
+
+.cancel-btn{
+
+    background:#e5e7eb;
+
+    color:#374151;
+}
+
+.cancel-btn:hover{
+
+    background:#d1d5db;
+}
+
+/* YES BUTTON */
+
+.confirm-btn{
+
+     background:linear-gradient(
+        135deg,
+        #a78bfa,
+        #f97316
+    );
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+}
+
+.confirm-btn:hover{
+
+    transform:translateY(-2px);
+}
+
+/* ANIMATION */
+
+@keyframes popupScale{
+
+    from{
+
+        transform:scale(0.7);
+        opacity:0;
+    }
+
+    to{
+
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+
+/* =========================
+   SAFE RESPONSIVE FIX (NO DESIGN CHANGE)
+========================= */
+
+/* Tablet adjustment (ONLY spacing, no redesign) */
+@media(max-width:900px){
+
+    .sidebar{
+        width:230px;
+    }
+
+    .main-content,
+    .main{
+        margin-left:230px;
+        padding:35px;
+    }
+}
+
+/* Mobile fix (NO layout redesign, only prevent breaking) */
+@media(max-width:768px){
+
+    /* Hide sidebar safely */
+    .sidebar{
+        display:none;
+    }
+
+    /* Reset layout spacing */
+    .main-content,
+    .main{
+        margin-left:0;
+        padding:22px;
+    }
+
+    /* Hero text scaling only */
+    .hero-section h1{
+        font-size:36px;
+    }
+
+    .hero-section p{
+        font-size:16px;
+        line-height:1.7;
+    }
+
+    /* IMPORTANT: keep grid SAME behavior, only reduce gap */
+    .cards,
+    .workout-grid,
+    .workout-cards,
+    .exercise-grid{
+        gap:20px;
+    }
+
+    /* Card safety ONLY (no visual redesign) */
+    .card,
+    .workout-card,
+    .exercise-card{
+        padding:26px;
+    }
+
+    /* Exercise items safety */
+    .exercise-item{
+        padding:18px;
+    }
+
+    /* Motivation box scaling */
+    .motivation-box{
+        padding:28px 18px;
+    }
+
+    .motivation-box h2{
+        font-size:30px;
+    }
+
+    /* Logout modal safety */
+    .logout-box{
+        width:90%;
+        max-width:400px;
+    }
+}
+
+/* Small mobile tuning */
+@media(max-width:480px){
+
+    .main-content,
+    .main{
+        padding:18px;
+    }
+
+    .hero-section h1{
+        font-size:30px;
+    }
+
+    .complete-btn,
+    .details-btn{
+        padding:12px 20px;
+        font-size:14px;
+    }
+
+    .exercise-item h4{
+        font-size:18px;
+    }
+}

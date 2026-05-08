@@ -1,0 +1,377 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+/* =========================
+   BODY
+========================= */
+
+body{
+    min-height:100vh;
+    background:linear-gradient(135deg,#f7f3ff,#fff7ed);
+    overflow-x:hidden;
+    color:#1f2937;
+    position:relative;
+}
+
+/* glowing background */
+
+body::before{
+    content:"";
+    position:absolute;
+    top:-150px;
+    left:-150px;
+    width:450px;
+    height:450px;
+    background:radial-gradient(circle,#c4b5fd,transparent 60%);
+    filter:blur(90px);
+    z-index:0;
+}
+
+body::after{
+    content:"";
+    position:absolute;
+    bottom:-150px;
+    right:-150px;
+    width:450px;
+    height:450px;
+    background:radial-gradient(circle,#fdba74,transparent 60%);
+    filter:blur(90px);
+    z-index:0;
+}
+
+/* =========================
+   MAIN LAYOUT
+========================= */
+
+.main-container{
+    width:100%;
+    min-height:100vh;
+    display:flex;
+    position:relative;
+    z-index:2;
+}
+
+/* =========================
+   LEFT SECTION
+========================= */
+
+.left-section{
+    width:75%;
+    position:relative;
+    display:flex;
+    align-items:flex-end;
+    padding:60px;
+    overflow:hidden;
+}
+
+/* background image */
+
+.left-section::before{
+    content:"";
+    position:absolute;
+    inset:25px;
+    border-radius:35px;
+    background:
+        linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35)),
+        url("/static/images/loginfitness.jpeg");
+    background-size:cover;
+    background-position:center;
+}
+
+/* overlay */
+
+.hero-overlay{
+    position:absolute;
+    inset:25px;
+    border-radius:35px;
+    background:linear-gradient(
+        to top,
+        rgba(0,0,0,0.6),
+        rgba(0,0,0,0.15)
+    );
+}
+
+/* content */
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    color:white;
+    max-width:600px;
+    padding-left:40px;
+    padding-bottom:60px;
+}
+
+.hero-content h1{
+    font-size:70px;
+    line-height:1.1;
+    font-weight:800;
+    margin-bottom:20px;
+}
+
+.hero-content p{
+    font-size:18px;
+    line-height:1.7;
+    opacity:0.95;
+    max-width:520px;
+    margin-bottom:35px;
+}
+
+/* buttons */
+
+.hero-buttons{
+    display:flex;
+    gap:18px;
+}
+
+.hero-btn{
+    padding:15px 34px;
+    border-radius:14px;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.primary-btn{
+    background:linear-gradient(135deg,#a78bfa,#f97316);
+    color:white;
+    box-shadow:0 10px 30px rgba(124,58,237,0.25);
+}
+
+.secondary-btn{
+    border:1px solid rgba(255,255,255,0.5);
+    color:white;
+    backdrop-filter:blur(10px);
+}
+
+.hero-btn:hover{
+    transform:translateY(-3px);
+}
+
+/* =========================
+   RIGHT SECTION
+========================= */
+
+.right-section{
+    width:42%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px;
+}
+
+.login-wrapper{
+    width:100%;
+    max-width:430px;
+}
+
+/* =========================
+   FLASH MESSAGE
+========================= */
+
+.flash,
+.flash-message{
+    width:100%;
+    padding:14px;
+    margin-bottom:18px;
+    border-radius:12px;
+    text-align:center;
+    font-weight:600;
+    animation:fadeIn 0.4s ease;
+}
+
+.flash.error,
+.flash-message.error{
+    background:rgba(239,68,68,0.12);
+    border:1px solid #ef4444;
+    color:#dc2626;
+}
+
+.flash-message.success{
+    background:rgba(34,197,94,0.15);
+    color:#16a34a;
+    border:1px solid rgba(34,197,94,0.3);
+}
+
+/* =========================
+   LOGIN BOX
+========================= */
+
+.login-box{
+    background:rgba(255,255,255,0.78);
+    backdrop-filter:blur(18px);
+    padding:50px;
+    border-radius:30px;
+    border:1px solid rgba(124,58,237,0.15);
+    box-shadow:0 20px 50px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+
+.login-box:hover{
+    transform:translateY(-5px);
+}
+
+.login-box h1{
+    font-size:38px;
+    color:#4c1d95;
+    margin-bottom:10px;
+    font-weight:800;
+}
+
+.subtitle{
+    color:#6b7280;
+    margin-bottom:35px;
+    font-size:15px;
+    line-height:1.7;
+}
+
+/* =========================
+   FORM
+========================= */
+
+form{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+input{
+    width:100%;
+    padding:16px;
+    border:none;
+    border-radius:14px;
+    background:rgba(124,58,237,0.06);
+    color:#1f2937;
+    outline:none;
+    border:1px solid rgba(124,58,237,0.12);
+    transition:0.3s;
+    font-size:15px;
+}
+
+input:focus{
+    border-color:#f97316;
+    box-shadow:0 0 15px rgba(249,115,22,0.2);
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+button{
+    padding:16px;
+    border:none;
+    border-radius:16px;
+    background:linear-gradient(135deg,#a78bfa,#f97316);
+    color:white;
+    font-size:16px;
+    font-weight:700;
+    cursor:pointer;
+    transition:0.3s;
+    box-shadow:0 12px 30px rgba(124,58,237,0.2);
+}
+
+button:hover{
+    transform:translateY(-3px);
+}
+
+/* =========================
+   REGISTER TEXT
+========================= */
+
+.register-text{
+    margin-top:25px;
+    text-align:center;
+    color:#4b5563;
+}
+
+.register-text a{
+    color:#7c3aed;
+    text-decoration:none;
+    font-weight:700;
+}
+
+.register-text a:hover{
+    color:#f97316;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(-10px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+/* TABLET */
+@media (max-width: 1100px){
+
+    .left-section{
+        display:none;
+    }
+
+    .right-section{
+        width:100%;
+        padding:30px;
+    }
+
+    .login-box{
+        padding:40px;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 600px){
+
+    body::before,
+    body::after{
+        width:250px;
+        height:250px;
+    }
+
+    .right-section{
+        padding:20px;
+    }
+
+    .login-box{
+        padding:25px;
+        border-radius:20px;
+    }
+
+    .login-box h1{
+        font-size:28px;
+    }
+
+    .subtitle{
+        font-size:13px;
+    }
+
+    input{
+        padding:14px;
+        font-size:14px;
+    }
+
+    button{
+        padding:14px;
+        font-size:15px;
+    }
+
+    .register-text{
+        font-size:13px;
+    }
+}

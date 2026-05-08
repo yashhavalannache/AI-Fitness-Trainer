@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+    <div class="main-container">
+
+        <!-- LEFT REGISTER SECTION -->
+        <div class="left-section">
+
+            <div class="form-wrapper">
+
+                <div class="form-box">
+
+                    <h1>Create Account</h1>
+
+                    <p class="subtitle">
+                        Start your transformation journey with AI-powered fitness.
+                    </p>
+
+                    <form action="/register" method="POST">
+
+                        <div class="input-group">
+
+                            <input type="text" name="name" placeholder="Full Name" required>
+
+                            <input type="number" name="age" placeholder="Age" required>
+
+                        </div>
+
+                        <div class="input-group">
+
+                            <input type="number" step="0.1" name="height" placeholder="Height (cm)" required>
+
+                            <input type="number" step="0.1" name="weight" placeholder="Weight (kg)" required>
+
+                        </div>
+
+                        <div class="input-group">
+
+                            <select name="goal" required>
+
+                                <option value="">Select Fitness Goal</option>
+                                <option value="Weight Loss">Weight Loss</option>
+                                <option value="Muscle Gain">Muscle Gain</option>
+                                <option value="Maintenance">Maintenance</option>
+
+                            </select>
+
+                            <select name="level" required>
+
+                                <option value="">Fitness Level</option>
+                                <option value="Beginner">Beginner</option>
+                                <option value="Intermediate">Intermediate</option>
+                                <option value="Advanced">Advanced</option>
+
+                            </select>
+
+                        </div>
+
+                        <input type="email" name="email" placeholder="Email Address" required>
+
+                        <input type="password" name="password" placeholder="Password" required>
+
+                        <button type="submit">
+                            Register
+                        </button>
+
+                    </form>
+
+                    <p class="login-text">
+                        Already have an account?
+                        <a href="/login">Login</a>
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- RIGHT IMAGE SECTION -->
+        <div class="right-section">
+
+            <div class="hero-overlay"></div>
+
+            <div class="hero-content">
+
+                <h1>
+                    Build Your
+                    Strongest Version.
+                </h1>
+
+                <p>
+                    Smart workouts, AI nutrition plans,
+                    progress tracking, and real results —
+                    all in one place.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="/" class="hero-btn secondary-btn">
+                        Explore
+                    </a>
+
+                    <a href="/login" class="hero-btn primary-btn">
+                        Login
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+<script>
+
+function confirmLogout(event){
+
+    event.preventDefault();
+
+    const confirmAction = confirm(
+        "Are you sure you want to logout?"
+    );
+
+    if(confirmAction){
+
+        window.location.href = "/logout";
+
+    }
+}
+
+</script>
+</body>
+</html>

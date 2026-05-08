@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+    <div class="main-container">
+
+        <!-- LEFT SIDE -->
+        <div class="left-section">
+
+            <div class="hero-overlay"></div>
+
+            <div class="hero-content">
+
+                <h1>
+                    Transform Your Fitness
+                    Journey Today.
+                </h1>
+
+                <p>
+                    AI-powered workouts, smart nutrition plans,
+                    progress tracking, and real transformation.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="/register" class="hero-btn primary-btn">
+                        Get Started
+                    </a>
+
+                    <a href="/" class="hero-btn secondary-btn">
+                        Explore
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- RIGHT SIDE -->
+        <div class="right-section">
+
+            <div class="login-wrapper">
+
+                <!-- FLASH MESSAGE -->
+                {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+
+        {% for category, message in messages %}
+
+            {% if category == "error" %}
+
+                <div class="flash-message error">
+                    {{ message }}
+                </div>
+
+            {% endif %}
+
+        {% endfor %}
+
+    {% endif %}
+{% endwith %}
+
+                <div class="login-box">
+
+                    <h1>Welcome Back</h1>
+
+                    <p class="subtitle">
+                        Login to continue your transformation journey.
+                    </p>
+
+                    <form action="/login" method="POST">
+
+                        <input 
+                            type="email"
+                            name="email"
+                            placeholder="Email Address"
+                            required
+                        >
+
+                        <input
+                            type="password"
+                            name="password"
+                            placeholder="Password"
+                            required
+                        >
+
+                        <button type="submit">
+                            Login
+                        </button>
+
+                    </form>
+
+                    <p class="register-text">
+                        Don't have an account?
+                        <a href="/register">Register</a>
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

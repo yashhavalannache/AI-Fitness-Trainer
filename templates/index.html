@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Fitness Trainer</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='css/index.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">AI FITNESS TRAINER</div>
+
+        <div class="nav-links">
+            <a href="/login">Login</a>
+            <a href="/register" class="btn-nav">Get Started</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>Train Smarter. Eat Better. Live Stronger.</h1>
+
+            <p>
+                AI Fitness Trainer is not just an app — it’s your personal digital coach.
+                It builds your workout plan, designs your diet, tracks your progress,
+                and guides your posture like a real trainer standing beside you 24/7.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="/register" class="btn-primary">Start Your Transformation</a>
+                <a href="/login" class="btn-secondary">Login</a>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- WHY THIS APP -->
+    <section class="info-section section">
+
+        <h2>Why This App Exists</h2>
+
+        <p>
+            Most people fail fitness not because of lack of effort, but because of lack of guidance.
+            Confusing diets, wrong workouts, and no consistency destroy progress.
+            This AI system removes all confusion and gives you a clear path every day.
+        </p>
+
+    </section>
+
+    <!-- FEATURES -->
+    <section class="features section">
+
+        <h2>What This AI Does For You</h2>
+
+        <div class="feature-cards">
+
+            <div class="card">
+                <h3>Smart Workout Generator</h3>
+                <p>
+                    Personalized workout plans based on your goal — fat loss, muscle gain, or maintenance.
+                    Updated dynamically for real progress.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>AI Diet Planner</h3>
+                <p>
+                    Balanced meals designed according to your workout intensity and body needs.
+                    Fuel your body like a machine.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Posture Intelligence</h3>
+                <p>
+                    Detects and improves your form to prevent injuries and maximize results.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Progress Tracking</h3>
+                <p>
+                    Tracks calories, streaks, fitness score, and daily improvement.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- NEW PREMIUM SHOWCASE SECTION -->
+    <section class="predictable-section">
+
+        <div class="predictable-header">
+            <h2>PROGRESS SHOULD BE PREDICTABLE</h2>
+            <p>
+                AI-driven progressive overload that adjusts in real time —
+                so you keep growing without burning out.
+            </p>
+        </div>
+
+        <div class="predictable-grid">
+
+            <div class="predict-card left-card">
+                <div class="overlay"></div>
+
+                <div class="predict-content">
+                    <h3>Know Exactly<br>What to Lift</h3>
+
+                    <p>
+                        AI-powered workouts built from millions of real training sessions.
+                        No guessing sets, reps or weights.
+                    </p>
+                </div>
+            </div>
+
+            <div class="predict-card right-card">
+                <div class="overlay"></div>
+
+                <div class="predict-content">
+                    <h3>Flexible Training</h3>
+
+                    <p>
+                        5-30 minute sessions that adapt to your schedule and equipment.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- HEALTH IMPORTANCE -->
+    <section class="health-section section">
+
+        <h2>Why Daily Exercise Matters</h2>
+
+        <div class="feature-cards">
+
+            <div class="card">
+                <h3>Boosts Mental Health</h3>
+                <p>
+                    Exercise reduces stress, anxiety, and improves focus and mood by releasing endorphins.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Strengthens Heart</h3>
+                <p>
+                    Regular activity improves blood circulation and reduces risk of heart diseases.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Improves Energy</h3>
+                <p>
+                    A fit body produces more energy and reduces fatigue in daily life.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+<!-- CTA SECTION -->
+
+<section class="cta-section">
+
+    <div class="cta-logo">
+        <img src="/static/images/logoicon.jpeg" alt="logo">
+    </div>
+
+    <h2>BUILD MUSCLE. STAY LEAN. START TODAY.</h2>
+
+    <p>
+        Your workouts are already programmed — all you have to do is show up.
+    </p>
+
+    <a href="/register" class="cta-button">Get My Plan</a>
+
+</section>
+
+
+    <!-- DIET & NATURAL HEALTH -->
+    <section class="health-section section">
+
+        <h2>Natural Health & Diet Importance</h2>
+
+        <div class="feature-cards">
+
+            <div class="card">
+                <h3>Clean Eating</h3>
+                <p>
+                    Natural foods like fruits, vegetables, and protein-rich meals improve long-term health.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Hydration Power</h3>
+                <p>
+                    Drinking enough water boosts metabolism, digestion, and muscle recovery.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Balanced Nutrition</h3>
+                <p>
+                    Proper balance of protein, carbs, and fats is essential for fitness transformation.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- MOTIVATION -->
+    <section class="motivation">
+
+        <h2>Discipline Beats Motivation</h2>
+
+        <p>
+            You don’t need perfect conditions. You need consistency.
+            Every workout, every meal, every step builds the version of you
+            that you are trying to become.
+        </p>
+
+    </section>
+
+
+
+<!-- MOVING MOTIVATION TAGS -->
+<section class="moving-tags-section">
+
+    <div class="moving-tags">
+
+    <span>#success</span>
+    <span>#motivation</span>
+    <span>#goals</span>
+    <span>#determination</span>
+    <span>#consistency</span>
+    <span>#focus</span>
+    <span>#evolution</span>
+
+    <span>#success</span>
+    <span>#motivation</span>
+    <span>#goals</span>
+    <span>#determination</span>
+    <span>#consistency</span>
+    <span>#focus</span>
+    <span>#evolution</span>
+
+    <span>#success</span>
+    <span>#motivation</span>
+    <span>#goals</span>
+    <span>#determination</span>
+    <span>#consistency</span>
+    <span>#focus</span>
+    <span>#evolution</span>
+
+</div>
+
+</section>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <p>AI Fitness Trainer © 2026 | Built for transformation 🚀</p>
+    </footer>
+
+</body>
+
+</html>
+

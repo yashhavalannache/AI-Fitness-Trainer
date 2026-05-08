@@ -1,0 +1,581 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+/* =========================
+   BACKGROUND (INDEX THEME)
+========================= */
+
+body{
+    background:url("/static/images/allbg.jpeg") no-repeat center center fixed;
+    background-size:cover;
+
+    color:#1f2937;
+
+    display:flex;
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+}
+
+/* LIGHT OVERLAY */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+
+    background:linear-gradient(
+        135deg,
+        rgba(247,243,255,0.75),
+        rgba(255,247,237,0.75)
+    );
+
+    z-index:-5;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    bottom:-140px;
+    right:-140px;
+    width:500px;
+    height:500px;
+    background:radial-gradient(circle,#fdba74,transparent 60%);
+    filter:blur(95px);
+    z-index:-1;
+}
+
+/* =========================
+   SIDEBAR (GLASS STYLE)
+========================= */
+
+.sidebar{
+    width:260px;
+    height:100vh;
+    background:rgba(255,255,255,0.75);
+    backdrop-filter:blur(15px);
+    padding:40px 20px;
+    position:fixed;
+    border-right:1px solid rgba(124,58,237,0.12);
+    box-shadow:0 0 25px rgba(0,0,0,0.05);
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.sidebar h2{
+    margin-bottom:50px;
+    text-align:center;
+    font-size:30px;
+    font-weight:800;
+    letter-spacing:2px;
+
+    background:linear-gradient(
+        135deg,
+        #8b5cf6,
+        #f97316
+    );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+/* =========================
+   SIDEBAR LINKS
+========================= */
+
+.sidebar ul{
+    list-style:none;
+    padding:0;
+}
+
+.sidebar ul li{
+    margin:18px 0;
+}
+
+.sidebar ul li a{
+
+    display:block;
+
+    padding:15px 18px;
+
+    text-decoration:none;
+
+    color:#4c1d95;
+
+    font-weight:600;
+
+    border-radius:16px;
+
+    transition:0.3s ease;
+}
+
+/* HOVER EFFECT */
+
+.sidebar ul li a:hover{
+
+    background:linear-gradient(
+        135deg,
+        #8b5cf6,
+        #f97316
+    );
+
+    color:white;
+
+    transform:translateX(6px);
+
+    box-shadow:
+    0 12px 25px rgba(124,58,237,0.25);
+}
+
+/* ACTIVE PAGE */
+
+.sidebar ul li a.active{
+
+    background:linear-gradient(
+        135deg,
+        #8b5cf6,
+        #f97316
+    );
+
+    color:white;
+
+    transform:translateX(6px);
+
+    box-shadow:
+    0 12px 25px rgba(124,58,237,0.25);
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.main-content{
+    margin-left:280px;
+    padding:50px;
+    width:100%;
+}
+
+/* =========================
+   PAGE TITLE
+========================= */
+
+.main-content h1{
+    color:#4c1d95;
+    margin-bottom:40px;
+    font-size:42px;
+    font-weight:800;
+    text-align:center;
+    position:relative;
+}
+
+/* underline glow */
+
+.main-content h1::after{
+    content:"";
+    width:90px;
+    height:4px;
+
+    background:linear-gradient(
+        135deg,
+        #a78bfa,
+        #f97316
+    );
+
+    position:absolute;
+
+    left:50%;
+    transform:translateX(-50%);
+
+    bottom:-10px;
+
+    border-radius:10px;
+}
+
+/* =========================
+   TODAY DIET SECTION
+========================= */
+
+.today-diet{
+    margin-bottom:45px;
+}
+
+/* =========================
+   DIET CARDS GRID
+========================= */
+
+.diet-cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+/* =========================
+   DIET CARD
+========================= */
+
+.diet-card{
+
+    background:rgba(255,255,255,0.78);
+
+    border:1px solid rgba(124,58,237,0.12);
+
+    padding:30px;
+
+    border-radius:24px;
+
+    backdrop-filter:blur(12px);
+
+    transition:0.35s ease;
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.06);
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+/* top glow */
+
+.diet-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-40px;
+    right:-40px;
+
+    width:120px;
+    height:120px;
+
+    background:radial-gradient(
+        circle,
+        rgba(249,115,22,0.18),
+        transparent 70%
+    );
+
+    filter:blur(15px);
+}
+
+/* hover effect */
+
+.diet-card:hover{
+
+    transform:translateY(-10px) scale(1.02);
+
+    border-color:#f97316;
+
+    box-shadow:
+    0 20px 40px rgba(249,115,22,0.18);
+}
+
+/* =========================
+   CARD TITLE
+========================= */
+
+.diet-card h2{
+
+    color:#7c3aed;
+
+    margin-bottom:14px;
+
+    font-size:24px;
+
+    font-weight:700;
+}
+
+/* =========================
+   FOOD TEXT
+========================= */
+
+.diet-card p{
+
+    color:#4b5563;
+
+    line-height:1.8;
+
+    font-size:16px;
+
+    font-weight:500;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:900px){
+
+    .sidebar{
+        width:220px;
+    }
+
+    .main-content{
+        margin-left:240px;
+        padding:35px;
+    }
+}
+
+@media(max-width:768px){
+
+    .sidebar{
+        display:none;
+    }
+
+    .main-content{
+        margin-left:0;
+        padding:25px;
+    }
+
+    .main-content h1{
+        font-size:34px;
+    }
+
+    .diet-cards{
+        grid-template-columns:1fr;
+    }
+}
+/* =========================
+   LOGOUT MODAL
+========================= */
+
+.logout-popup{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    background:rgba(0,0,0,0.45);
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:0.3s ease;
+
+    z-index:9999;
+}
+
+/* SHOW POPUP */
+
+.logout-popup.active{
+
+    opacity:1;
+    visibility:visible;
+}
+
+/* POPUP BOX */
+
+.logout-box{
+
+    width:400px;
+
+    background:white;
+
+    border-radius:25px;
+
+    padding:35px;
+
+    text-align:center;
+
+    box-shadow:0 20px 40px rgba(0,0,0,0.2);
+
+    animation:popupScale 0.3s ease;
+}
+
+/* TITLE */
+
+.logout-box h2{
+
+    color:#4c1d95;
+
+    font-size:32px;
+
+    margin-bottom:15px;
+}
+
+/* TEXT */
+
+.logout-box p{
+
+    color:#6b7280;
+
+    margin-bottom:30px;
+
+    font-size:16px;
+}
+
+/* BUTTON AREA */
+
+.logout-actions{
+
+    display:flex;
+
+    gap:15px;
+}
+
+/* BUTTONS */
+
+.cancel-btn,
+.confirm-btn{
+
+    flex:1;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:14px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    text-decoration:none;
+
+    transition:0.3s;
+}
+
+/* NO BUTTON */
+
+.cancel-btn{
+
+    background:#e5e7eb;
+
+    color:#374151;
+}
+
+.cancel-btn:hover{
+
+    background:#d1d5db;
+}
+
+/* YES BUTTON */
+
+.confirm-btn{
+
+     background:linear-gradient(
+        135deg,
+        #a78bfa,
+        #f97316
+    );
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+}
+
+.confirm-btn:hover{
+
+    transform:translateY(-2px);
+}
+
+/* ANIMATION */
+
+@keyframes popupScale{
+
+    from{
+
+        transform:scale(0.7);
+        opacity:0;
+    }
+
+    to{
+
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+/* =========================
+   SAFE RESPONSIVE FIX (NO DESIGN CHANGE)
+========================= */
+
+/* Tablet */
+@media(max-width:900px){
+
+    .sidebar{
+        width:230px;
+    }
+
+    .main-content{
+        margin-left:240px;
+        padding:35px;
+    }
+}
+
+/* Mobile */
+@media(max-width:768px){
+
+    /* Hide sidebar safely */
+    .sidebar{
+        display:none;
+    }
+
+    /* Reset layout spacing */
+    .main-content{
+        margin-left:0;
+        padding:22px;
+    }
+
+    /* Title scaling only */
+    .main-content h1{
+        font-size:32px;
+    }
+
+    /* Grid safety (no design change, only stacking behavior) */
+    .diet-cards{
+        grid-template-columns:1fr;
+        gap:18px;
+    }
+
+    /* Card spacing safety */
+    .diet-card{
+        padding:26px;
+    }
+
+    /* Text readability */
+    .diet-card h2{
+        font-size:22px;
+    }
+
+    .diet-card p{
+        font-size:15px;
+        line-height:1.7;
+    }
+
+    /* Modal safety */
+    .logout-box{
+        width:90%;
+        max-width:400px;
+    }
+}
+
+/* Small mobile */
+@media(max-width:480px){
+
+    .main-content{
+        padding:18px;
+    }
+
+    .main-content h1{
+        font-size:28px;
+    }
+}

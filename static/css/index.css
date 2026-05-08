@@ -1,0 +1,784 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+h1, h2, h3{
+    text-align:center;
+}
+
+.main-content h1,
+.main-content h2,
+.main-content h3 {
+    text-align: center;
+}
+
+.workout-section h2,
+.diet-section h2,
+.progress-section h2,
+.analytics-section h2 {
+    text-align: center;
+    display: block;
+}
+
+
+body{
+    background:linear-gradient(135deg,#f7f3ff,#fff7ed);
+    color:#1f2937;
+    overflow-x:hidden;
+}
+
+/* =========================
+   BACKGROUND GLOW EFFECT
+========================= */
+body{
+    background:url("/static/images/fitness-bg.jpg") no-repeat center center fixed;
+    background-size:cover;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:linear-gradient(
+        135deg,
+        rgba(247,243,255,0.85),
+        rgba(255,247,237,0.85)
+    );
+    z-index:-1;
+}
+.section,
+.hero-content,
+.motivation{
+    text-align:center;
+}
+body::after{
+    content:"";
+    position:fixed;
+    bottom:-120px;
+    right:-120px;
+    width:500px;
+    height:500px;
+    background:radial-gradient(circle,#fdba74,transparent 60%);
+    z-index:-1;
+    filter:blur(90px);
+    
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 60px;
+
+    position:fixed;
+    top:0;
+    width:100%;
+
+    background:rgba(255,255,255,0.75);
+    backdrop-filter:blur(15px);
+
+    border-bottom:1px solid rgba(0,0,0,0.05);
+    z-index:1000;
+}
+
+.logo{
+    font-size:20px;
+    font-weight:800;
+    color:#7c3aed;
+    letter-spacing:2px;
+}
+
+.nav-links a{
+    margin-left:20px;
+    text-decoration:none;
+    color:#374151;
+    font-weight:500;
+    transition:0.3s;
+}
+
+.nav-links a:hover{
+    color:#f97316;
+}
+
+.btn-nav{
+    padding:10px 18px;
+    border-radius:12px;
+    background:linear-gradient(135deg,#a78bfa,#f97316);
+    color:white !important;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+     margin-top:80px;
+    height:70vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:120px 20px 20px 30px;
+}
+
+/* HERO CONTENT */
+.hero-content{
+    width:100%; /* takes full available width */
+    max-width:none; /* removes width restriction */
+    text-align:center; /* centers text */
+    padding:50px 40px ; /* adds side spacing*/
+    text-transform:uppercase;
+}
+
+/* MAIN TITLE */
+.hero h1{
+    font-size:88px; /* increases heading size */
+    margin-bottom:25px;
+    color:#4c1d95;
+    line-height:1.1;
+    text-align:center; /* ensures center alignment */
+    font-weight:800;
+}
+
+/* DESCRIPTION */
+.hero p{
+    font-size:34px; /* increases paragraph size */
+    color:#4b5563;
+    line-height:1.8;
+    margin-bottom:35px;
+    text-align:center; /* centers paragraph */
+    width:100%; /* full width */
+    max-width:none; /* removes paragraph width restriction */
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.hero-buttons a{
+    display:inline-block;
+    margin:8px;
+    padding:16px 26px;
+    border-radius:18px;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.btn-primary{
+    background:linear-gradient(135deg,#a78bfa,#f97316);
+    color:white;
+    box-shadow:0 10px 25px rgba(124,58,237,0.25);
+}
+
+.btn-primary:hover{
+    transform:scale(1.05);
+}
+
+.btn-secondary{
+    border:2px solid #a78bfa;
+    color:#7c3aed;
+}
+
+.btn-secondary:hover{
+    background:#a78bfa;
+    color:white;
+}
+
+/* =========================
+   SECTION BASE
+========================= */
+
+.section{
+    padding:90px 20px;
+    text-align:center;
+}
+
+/* WOW TITLE STYLE */
+.section h2{
+    font-size:36px;
+    color:#4c1d95;
+    margin-bottom:15px;
+    text-align:center;
+    position:relative;
+}
+
+.section h2::after{
+    content:"";
+    width:80px;
+    height:4px;
+    background:linear-gradient(135deg,#a78bfa,#f97316);
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    bottom:-10px;
+    border-radius:10px;
+}
+
+.section p{
+    max-width:900px;
+    margin:20px auto 0 auto;
+    color:#4b5563;
+    line-height:1.9;
+    font-size:17px;
+}
+
+/* WHY THIS APP SECTION */
+.info-section{
+
+    margin-top:120px; /* adds space above the section */
+}
+
+.info-section h2{
+    font-size:72px;
+    font-weight:800;
+}
+
+.info-section p{
+    font-size:30px;
+    max-width:none;
+    width:100%;
+    padding:0 60px;
+    line-height:1.8;
+}
+
+/* HEALTH SECTION TITLE */
+
+.health-section h2{
+    font-size:72px; /* increases heading size */
+    font-weight:800; /* makes heading bold */
+    color:#4c1d95; /* heading color */
+    text-align:center; /* centers heading */
+    margin-bottom:50px; /* space below heading */
+    line-height:1.1; /* controls heading height */
+}
+
+
+/* =========================
+   FEATURE CARDS
+========================= */
+
+.features{
+
+    margin-top:-50px; /* adds gap above the section */
+    padding:120px 40px; /* increases inner spacing */
+}
+
+.features h2{
+    font-size:72px; /* increases heading size */
+    font-weight:800;
+    margin-bottom:60px; /* spacing below heading */
+    color:#4c1d95;
+    text-align:center;
+}
+
+.feature-cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
+    margin-top:40px;
+}
+
+.card{
+    background:rgba(255,255,255,0.85);
+    border:1px solid rgba(124,58,237,0.15);
+    border-radius:22px;
+    padding:30px;
+    backdrop-filter:blur(10px);
+    transition:0.3s;
+    box-shadow:0 10px 30px rgba(0,0,0,0.05);
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 20px 40px rgba(249,115,22,0.25);
+    border-color:#f97316;
+}
+
+.card h3{
+    color:#7c3aed;
+    margin-bottom:10px;
+    font-size:20px;
+}
+
+.card p{
+    color:#4b5563;
+    line-height:1.7;
+}
+
+/* =========================
+   MOTIVATION
+========================= */
+
+.motivation{
+    padding:100px 20px;
+    text-align:center;
+    background:linear-gradient(135deg,#ede9fe,#fff7ed);
+}
+
+.motivation h2{
+    font-size:70px;
+    font-weight: 700px;
+    color:#4c1d95;
+    margin-bottom:20px;
+}
+
+.motivation p{
+    color:#374151;
+    max-width:800px;
+    margin:auto;
+    line-height:1.9;
+    font-size:18px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    text-align:center;
+    padding:30px;
+    color:#6b7280;
+    font-size:14px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width:768px){
+
+    .hero h1{
+        font-size:34px;
+    }
+
+    .navbar{
+        padding:15px 20px;
+    }
+
+    .section{
+        padding:70px 15px;
+    }
+}
+
+/* ========================= */
+   PREMIUM SHOWCASE SECTION
+/* ========================= */ */
+
+.predictable-section{
+    padding:30px 6%;
+}
+
+.predictable-header{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.predictable-header h2{
+    font-size:70px;
+    line-height:1;
+    color:#4c1d95;
+    font-weight:600px;
+    text-transform:uppercase;
+    margin-bottom:20px;
+}
+
+.predictable-header p{
+    color:#7c3aed;
+    font-size:24px;
+    max-width:800px;
+    margin:auto;
+}
+
+.predictable-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,700px));
+    justify-content:center;
+    gap:10px;
+}
+
+.predict-card{
+    position:relative;
+    min-height:500px;
+    max-width:650px;
+    width:100%;
+    margin:auto;
+    border-radius:36px;
+    overflow:hidden;
+    display:flex; /* enables flexbox */
+    align-items:flex-end; /* moves content to bottom vertically */
+    padding:40px;
+    transition:0.4s ease;
+    border:1px solid rgba(59,130,246,0.3);
+    box-shadow:0 0 35px rgba(37,99,235,0.25);
+}
+
+.predict-card:hover{
+    transform:translateY(-8px) scale(1.01);
+    box-shadow:0 0 45px rgba(56,189,248,0.45);
+}
+
+.left-card{
+    background:
+    linear-gradient(to top, rgba(0,0,0,0.88), rgba(0,0,0,0.2)),
+    url('/static/images/gym-phone.png') center center/cover no-repeat;
+}
+
+.right-card{
+    background:
+    linear-gradient(to top, rgba(0,0,0,0.88), rgba(0,0,0,0.2)),
+    url('/static/images/gym-woman.png') center center/cover no-repeat;
+}
+
+.predict-content{
+    position:relative;
+    z-index:2;
+}
+
+.predict-content h3{
+    font-size:42px;
+    line-height:1.1;
+    text-align:left;
+    color:#faf5f5;
+    margin-bottom:20px;
+    font-weight:600;
+}
+
+.predict-content p{
+    text-align:left;
+    color:#f6f7f8;
+    font-size:20px;
+    line-height:1.7;
+    max-width:620px;
+}
+
+/* CTA SECTION */
+
+.cta-section{
+
+    background:#ebe0f4;
+
+    padding:10px 5px; /* reduced from 140px */
+
+    text-align:center;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+/* LOGO BOX */
+
+/* LOGO BOX */
+/* LOGO BOX */
+
+.cta-logo{
+
+    width:140px;
+
+    height:140px;
+
+    margin:0px auto 30px auto; /* half outside and half inside */
+
+    background:#1f1f2e;
+
+    border-radius:35px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    box-shadow:0 15px 40px rgba(0,0,0,0.25);
+
+    position:relative;
+
+    z-index:10;
+}
+
+/* LOGO IMAGE */
+.cta-logo img{
+    width:90px;
+    height:90px;
+    object-fit:contain;
+}
+
+/* MAIN TITLE */
+
+.cta-section h2{
+
+    font-size:58px; /* smaller heading */
+
+    margin-bottom:20px; /* less spacing */
+}
+
+/* DESCRIPTION */
+
+.cta-section p{
+
+    font-size:24px; /* smaller paragraph */
+
+    margin-bottom:35px; /* less spacing */
+}
+
+/* CTA BUTTON */
+
+.cta-button{
+
+    display:inline-block;
+
+    padding:18px 55px;
+
+    border-radius:60px;
+
+    text-decoration:none;
+
+    font-size:22px;
+
+    font-weight:700;
+
+    color:white;
+
+    background:linear-gradient(135deg,#2563eb,#38bdf8); /* gradient button */
+
+    box-shadow:0 10px 30px rgba(37,99,235,0.35); /* glow */
+
+    transition:0.3s ease;
+
+    border:none;
+}
+
+/* HOVER EFFECT */
+
+.cta-button:hover{
+
+    transform:translateY(-4px) scale(1.03); /* floating effect */
+
+    box-shadow:0 15px 40px rgba(56,189,248,0.45); /* stronger glow */
+}
+
+/* =========================
+   MOVING MOTIVATION TAGS
+========================= */
+
+.moving-tags-section{
+    width:100%;
+    overflow:hidden;
+    margin-top:40px;
+    padding:25px 0;
+}
+
+.moving-tags{
+    display:flex;
+    align-items:center;
+    width:max-content;
+    white-space:nowrap;
+    animation:scrollTags 130s linear infinite; /* much slower movement */
+}
+
+.moving-tags span{
+
+    font-size:90px;
+    font-weight:1000; /* extra bold/thick */
+    font-style:italic; /* italic text */
+    color:#000000;
+    margin-right:30px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    font-family:'Poppins', sans-serif;
+}
+
+/* infinite smooth scrolling */
+@keyframes scrollTags{
+
+    from{
+        transform:translateX(0);
+    }
+
+    to{
+        transform:translateX(-50%);
+    }
+}
+
+/* =========================
+   RESPONSIVE FIX LAYER (DO NOT TOUCH DESIGN)
+========================= */
+
+/* Large tablets & small laptops */
+@media (max-width: 1024px) {
+
+    .navbar {
+        padding: 15px 30px;
+    }
+
+    .hero h1 {
+        font-size: 56px;
+    }
+
+    .hero p {
+        font-size: 22px;
+    }
+
+    .features h2,
+    .info-section h2,
+    .health-section h2,
+    .predictable-header h2 {
+        font-size: 48px;
+    }
+
+    .info-section p {
+        font-size: 20px;
+        padding: 0 20px;
+    }
+
+    .predict-content h3 {
+        font-size: 30px;
+    }
+
+    .predict-content p {
+        font-size: 16px;
+    }
+
+    .cta-section h2 {
+        font-size: 40px;
+    }
+
+    .cta-section p {
+        font-size: 18px;
+    }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px 20px;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .hero {
+        height: auto;
+        padding: 140px 15px 60px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-buttons a {
+        width: 80%;
+        text-align: center;
+    }
+
+    .feature-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .predictable-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .predict-card {
+        min-height: 380px;
+        padding: 25px;
+    }
+
+    .predict-content h3 {
+        font-size: 26px;
+    }
+
+    .predict-content p {
+        font-size: 15px;
+    }
+
+    .cta-section h2 {
+        font-size: 32px;
+    }
+
+    .cta-section p {
+        font-size: 16px;
+    }
+
+    .moving-tags span {
+        font-size: 45px;
+    }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+
+    .navbar {
+        padding: 12px 15px;
+    }
+
+    .logo {
+        font-size: 16px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .section h2 {
+        font-size: 26px;
+    }
+
+    .info-section h2,
+    .health-section h2,
+    .features h2 {
+        font-size: 30px;
+    }
+
+    .cta-section h2 {
+        font-size: 26px;
+    }
+
+    .cta-section p {
+        font-size: 14px;
+    }
+
+    .cta-button {
+        padding: 14px 30px;
+        font-size: 16px;
+    }
+
+    .moving-tags span {
+        font-size: 28px;
+    }
+
+    .section p,
+    .info-section p {
+        font-size: 14px;
+        padding: 0 10px;
+    }
+}

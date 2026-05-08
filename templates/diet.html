@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+    <title>Diet Plan</title>
+
+    <!-- CSS -->
+
+    <link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/diet.css') }}">
+
+    <!-- FONTS -->
+
+    <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+    <h2>AI FITNESS</h2>
+
+    <ul>
+
+        <li>
+
+            <a href="/dashboard"
+            class="{% if active_page == 'dashboard' %}active{% endif %}">
+
+                Dashboard
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="/workout"
+            class="{% if active_page == 'workout' %}active{% endif %}">
+
+                Workout Plan
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="/diet"
+            class="{% if active_page == 'diet' %}active{% endif %}">
+
+                Diet Plan
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="/posture"
+            class="{% if active_page == 'posture' %}active{% endif %}">
+
+                Posture AI
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="/account"
+            class="{% if active_page == 'account' %}active{% endif %}">
+
+                Account
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="#"
+            id="logoutBtn">
+
+                Logout
+
+            </a>
+
+        </li>
+
+    </ul>
+
+</div>
+
+<!-- MAIN CONTENT -->
+
+<div class="main-content">
+
+    <h1>
+
+        Your AI Diet Plan 🥗
+
+    </h1>
+
+    <h2>
+
+        Today: {{ day }}
+
+    </h2>
+
+    <div class="diet-cards">
+
+        {% if today_diet %}
+
+            {% for meal, food in today_diet.items() %}
+
+            <div class="diet-card">
+
+                <h2>{{ meal }}</h2>
+
+                <p>{{ food }}</p>
+
+            </div>
+
+            {% endfor %}
+
+        {% else %}
+
+            <div class="diet-card">
+
+                <h2>No Diet Found</h2>
+
+                <p>
+
+                    No diet available for today.
+
+                </p>
+
+            </div>
+
+        {% endif %}
+
+    </div>
+
+</div>
+
+<!-- LOGOUT POPUP -->
+
+<div
+class="logout-popup"
+id="logoutPopup">
+
+    <div class="logout-box">
+
+        <h2>Logout?</h2>
+
+        <p>
+
+            Are you sure you want to leave your fitness grind? 
+
+        </p>
+
+        <div class="logout-actions">
+
+            <button
+            id="cancelLogout"
+            class="cancel-btn">
+
+                Cancel
+
+            </button>
+
+            <a
+            href="/logout"
+            class="confirm-btn">
+
+                Yes Logout
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- LOGOUT POPUP SCRIPT -->
+
+<script>
+
+/* =========================
+   LOGOUT POPUP
+========================= */
+
+const logoutBtn =
+document.getElementById("logoutBtn");
+
+const logoutPopup =
+document.getElementById("logoutPopup");
+
+const cancelLogout =
+document.getElementById("cancelLogout");
+
+/* OPEN POPUP */
+
+logoutBtn.addEventListener("click", function(e){
+
+    e.preventDefault();
+
+    logoutPopup.classList.add("active");
+
+});
+
+/* CLOSE POPUP */
+
+cancelLogout.addEventListener("click", function(){
+
+    logoutPopup.classList.remove("active");
+
+});
+
+/* CLOSE IF CLICK OUTSIDE */
+
+logoutPopup.addEventListener("click", function(e){
+
+    if(e.target === logoutPopup){
+
+        logoutPopup.classList.remove("active");
+
+    }
+
+});
+
+</script>
+
+<!-- STOP CAMERA -->
+
+<script>
+
+window.addEventListener(
+"beforeunload",
+function () {
+
+    navigator.sendBeacon("/stop_camera");
+
+});
+
+</script>
+
+</body>
+</html>
