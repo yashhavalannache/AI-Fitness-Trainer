@@ -53,24 +53,22 @@
 
             <div class="login-wrapper">
 
-                <!-- FLASH MESSAGE -->
-                {% with messages = get_flashed_messages(with_categories=true) %}
-    {% if messages %}
+             <!-- TOAST NOTIFICATIONS -->
+<div id="toast-container">
 
-        {% for category, message in messages %}
-
-            {% if category == "error" %}
-
-                <div class="flash-message error">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                
+                <div class="toast {{ category }}">
                     {{ message }}
                 </div>
 
-            {% endif %}
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
 
-        {% endfor %}
-
-    {% endif %}
-{% endwith %}
+</div>
 
                 <div class="login-box">
 
@@ -114,6 +112,11 @@
         </div>
 
     </div>
-
+<script>
+    setTimeout(() => {
+        const toasts = document.querySelectorAll(".toast");
+        toasts.forEach(t => t.remove());
+    }, 3500);
+</script>
 </body>
 </html>

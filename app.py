@@ -2,7 +2,7 @@ from flask import Flask, render_template, session, redirect, url_for, request, f
 from datetime import datetime
 import cv2
 import os
-from app import app
+
 from models import db
 from models.user_model import User
 from models.fitness_model import FitnessProgress
@@ -225,17 +225,38 @@ def delete_account():
 
     if user:
 
+        # =========================
+        # DELETE PROFILE IMAGE FILE
+        # =========================
+        if user.profile_pic:
+
+            file_path = os.path.join(
+                app.config['UPLOAD_FOLDER'],
+                user.profile_pic
+            )
+
+            if os.path.exists(file_path):
+                os.remove(file_path)
+
+        # =========================
+        # DELETE FITNESS DATA
+        # =========================
         FitnessProgress.query.filter_by(user_id=user.id).delete()
 
+        # =========================
+        # DELETE USER
+        # =========================
         db.session.delete(user)
-
         db.session.commit()
 
+    # IMPORTANT: flash BEFORE clearing session
+    flash("Account deleted successfully 🗑️", "success")
+
+    # clear session AFTER flash is stored
     session.clear()
 
-    flash("Account deleted successfully")
-
     return redirect(url_for('home'))
+
 
 # =========================
 # PROFILE IMAGE UPLOAD
@@ -279,9 +300,8 @@ def upload_profile_pic():
 
     return redirect(url_for('account'))
 
-# =========================
-# LOGIN
-# =========================
+
+#=================LOGIN========================
 @app.route('/login', methods=['GET', 'POST'])
 def login():
 
@@ -290,17 +310,25 @@ def login():
         email = request.form['email']
         password = request.form['password']
 
-        user = User.query.filter_by(
-            email=email,
-            password=password
-        ).first()
+        # =========================
+        # CHECK EMAIL FIRST
+        # =========================
+        user = User.query.filter_by(email=email).first()
 
         if not user:
-
-            flash("Invalid credentials ⚠️")
-
+            flash("Email not registered ❌")
             return redirect(url_for('login'))
 
+        # =========================
+        # CHECK PASSWORD
+        # =========================
+        if user.password != password:
+            flash("Invalid password ⚠️")
+            return redirect(url_for('login'))
+
+        # =========================
+        # SUCCESS LOGIN
+        # =========================
         session['user_id'] = user.id
         session['username'] = user.name
 
@@ -326,4 +354,4 @@ if __name__ == '__main__':
     with app.app_context():
         db.create_all()
 
-    app.run(host='0.0.0.0', port=7860, debug=False)
+    app.run(debug=True)

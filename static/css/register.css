@@ -21,7 +21,7 @@ body{
     background-attachment:fixed;
 
     overflow-x:hidden;
-
+  /* overflow: hidden;   🚫 disables scrolling */
     color:#1f2937;
     position:relative;
 }
@@ -181,7 +181,7 @@ button{
 
     border-radius:16px;
 
-    background:linear-gradient(135deg,#a78bfa,#f97316);
+    background:linear-gradient(135deg,#3d0ccf,#f97316);
     color:white;
 
     font-size:16px;
@@ -364,4 +364,21 @@ button:hover{
     .hero-content{
         padding:20px;
     }
+}
+
+.login-text {
+    text-align: center;   /* ✅ centers the whole line */
+    margin-top: 15px;
+    font-size: 20px;
+    color: #080707;
+}
+.login-text a {
+    font-weight: 700;        /* 🔥 makes it bold */
+    color: #470691;          /* nice modern glow color */
+    text-decoration: none;   /* removes underline */
+    transition: 0.3s ease;
+}
+.login-text a:hover {
+    color: #6b7280;
+    text-shadow: 0 0 10px #4c1d95;
 }

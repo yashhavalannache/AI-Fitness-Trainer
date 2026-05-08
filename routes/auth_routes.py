@@ -15,21 +15,29 @@ def login():
         email = request.form['email']
         password = request.form['password']
 
-        user = User.query.filter_by(email=email, password=password).first()
+        user = User.query.filter_by(email=email).first()
 
-        if user:
-            session['user_id'] = user.id
-            return redirect(url_for('dashboard'))
-
-        else:
-            flash("Invalid credentials ⚠️ Please try again", "error")
+        # EMAIL CHECK
+        if not user:
+            flash("Email not registered ❌", "error")
             return redirect(url_for('auth.login'))
+
+        # PASSWORD CHECK
+        if user.password != password:
+            flash("Invalid password ⚠️", "error")
+            return redirect(url_for('auth.login'))
+
+        # SUCCESS LOGIN
+        session['user_id'] = user.id
+        session['username'] = user.name
+
+        return redirect(url_for('dashboard'))
 
     return render_template('login.html')
 
 
 # =========================
-# REGISTER ROUTE (FIXED)
+# REGISTER ROUTE
 # =========================
 @auth.route('/register', methods=['GET', 'POST'])
 def register():
@@ -45,15 +53,15 @@ def register():
         email = request.form['email']
         password = request.form['password']
 
-        # ✅ CHECK DUPLICATE EMAIL
+        # CHECK DUPLICATE EMAIL
         existing_user = User.query.filter_by(email=email).first()
 
         if existing_user:
             flash("Email already exists ⚠️ Try logging in", "error")
             return redirect(url_for('auth.register'))
 
-        # ✅ CREATE USER
-        user = User(
+        # CREATE USER
+        new_user = User(
             name=name,
             age=age,
             height=height,
@@ -64,7 +72,7 @@ def register():
             password=password
         )
 
-        db.session.add(user)
+        db.session.add(new_user)
         db.session.commit()
 
         flash("Account created successfully 🚀 Please login", "success")
@@ -80,4 +88,5 @@ def register():
 def logout():
 
     session.clear()
+    flash("Logged out successfully 👋", "success")
     return redirect(url_for('home'))
