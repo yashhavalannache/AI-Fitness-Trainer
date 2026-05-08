@@ -6,9 +6,7 @@ Instead of randomly choosing workouts or struggling to stay motivated, users get
 
 This project combines web development (Flask, HTML, CSS) with intelligent logic to simulate a personalized fitness journey. The goal is to make fitness more accessible, especially for students and busy individuals who find it difficult to maintain a routine.
 
- Vision of the Project
-The main idea behind this app is simple:
-“Fitness should not feel complicated — it should feel natural, guided, and motivating.”
+
 ---
 
 <!-- ## 🌟 Live Preview (Optional)
