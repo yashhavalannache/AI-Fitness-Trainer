@@ -23,13 +23,25 @@
 </video>
     <!-- NAVBAR -->
     <nav class="navbar">
-        <div class="logo">AI FITNESS TRAINER</div>
 
-        <div class="nav-links">
-            <a href="/login">Login</a>
-            <a href="/register" class="btn-nav">Get Started</a>
+    <!-- LOGO AREA -->
+    <div class="logo-container">
+
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Fitverse Logo">
+
+        <div class="logo">
+            Fitverse AI
         </div>
-    </nav>
+
+    </div>
+
+    <!-- NAV LINKS -->
+    <div class="nav-links">
+        <a href="/login">Login</a>
+        <a href="/register" class="btn-nav">Get Started</a>
+    </div>
+
+</nav>
 
     <!-- HERO SECTION -->
     <section class="hero">
@@ -148,7 +160,179 @@
         </div>
 
     </section>
+<!-- CTA SECTION -->
 
+<section class="cta-section">
+
+    <div class="cta-logo">
+        <img src="/static/images/logo.png" alt="logo">
+    </div>
+
+    <h2>BUILD MUSCLE. STAY LEAN. START TODAY.</h2>
+
+    <p>
+        Your workouts are already programmed — all you have to do is show up.
+    </p>
+
+    <a href="/register" class="cta-button">Get My Plan</a>
+
+</section>
+
+<!-- =========================
+     BLOG SECTION
+========================= -->
+
+<section class="blogs-section">
+
+    <div class="section-header">
+        <h2>Our Guides</h2>
+    </div>
+
+    <div class="blog-grid">
+
+        <!-- BLOG CARD 1 -->
+        <div class="blog-card">
+
+            <div class="blog-image">
+                <img src="{{ url_for('static', filename='images/blog1.jpeg') }}" alt="Deadlift Workout Guide">
+            </div>
+            
+            <div class="blog-content">
+
+                <h3>
+                    3 Day Split Workout – The Complete Guide (2026)
+                </h3>
+
+                <a href="https://www.hevyapp.com/3-day-split-workout-complete-guide/" 
+                   class="read-more"
+                   target="_blank">
+                    Read More →
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- BLOG CARD 2 -->
+        <div class="blog-card">
+
+            <div class="blog-image">
+                <img src="{{ url_for('static', filename='images/blog2.jpeg') }}" alt="4 Day Workout Guide">
+            </div>
+            
+            <div class="blog-content">
+
+                <h3>
+                    4 Day Workout Split – The Complete Guide (2026)
+                </h3>
+
+                <a href="https://www.hevyapp.com/4-day-workout-split-complete-guide/" 
+                   class="read-more"
+                   target="_blank">
+                    Read More →
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- BLOG CARD 3 -->
+        <div class="blog-card">
+
+            <div class="blog-image">
+                <img src="{{ url_for('static', filename='images/blog3.jpeg') }}" alt="5 Day Workout Split">
+            </div>
+            
+            <div class="blog-content">
+
+                <h3>
+                    5 Day Workout Split: Upper/Lower, PPL & More
+                </h3>
+
+                <a href="https://www.hevyapp.com/5-day-split-workout-complete-guide/" 
+                   class="read-more"
+                   target="_blank">
+                    Read More →
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- BLOG CARD 4 -->
+        <div class="blog-card">
+
+            <div class="blog-image">
+                <img src="{{ url_for('static', filename='images/blog4.jpeg') }}" alt="Bro Split Workout">
+            </div>
+            
+            <div class="blog-content">
+
+                <h3>
+                    5 Day Bro Split for Natural Bodybuilding
+                </h3>
+
+                <a href="https://www.hevyapp.com/bro-split-workout-program-guide/" 
+                   class="read-more"
+                   target="_blank">
+                    Read More →
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- BLOG CARD 5 -->
+        <div class="blog-card">
+
+            <div class="blog-image">
+                <img src="{{ url_for('static', filename='images/blog5.jpeg') }}" alt="Upper Lower Split">
+            </div>
+            
+            <div class="blog-content">
+
+                <h3>
+                    The Upper / Lower Split – Complete Workout Program Guide
+                </h3>
+
+                <a href="https://www.hevyapp.com/upper-lower-split-complete-guide/" 
+                   class="read-more"
+                   target="_blank">
+                    Read More →
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- BLOG CARD 6 -->
+        <div class="blog-card">
+
+            <div class="blog-image">
+                <img src="{{ url_for('static', filename='images/blog6.jpeg') }}" alt="Push Pull Legs Guide">
+            </div>
+            
+            <div class="blog-content">
+
+                <h3>
+                    Push Pull Legs – 3, 4, 5 & 6-Day Splits
+                </h3>
+
+                <a href="https://www.hevyapp.com/push-pull-legs-ultimate-guide/" 
+                   class="read-more"
+                   target="_blank">
+                    Read More →
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</section>
     <!-- HEALTH IMPORTANCE -->
     <section class="health-section section">
 
@@ -176,23 +360,7 @@ A fit body produces more energy and reduces fatigue in daily life, helping you s
         </div>
 
     </section>
-<!-- CTA SECTION -->
 
-<section class="cta-section">
-
-    <div class="cta-logo">
-        <img src="/static/images/logoicon.jpeg" alt="logo">
-    </div>
-
-    <h2>BUILD MUSCLE. STAY LEAN. START TODAY.</h2>
-
-    <p>
-        Your workouts are already programmed — all you have to do is show up.
-    </p>
-
-    <a href="/register" class="cta-button">Get My Plan</a>
-
-</section>
 
 
     <!-- DIET & NATURAL HEALTH -->
@@ -235,8 +403,6 @@ Maintaining the right balance of protein, carbohydrates, and fats is essential f
         </p>
 
     </section>
-
-
 
 <!-- MOVING MOTIVATION TAGS -->
 <section class="moving-tags-section">

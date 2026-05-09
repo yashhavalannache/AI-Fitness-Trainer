@@ -286,7 +286,7 @@ body::after{
 
     margin-bottom:14px;
 
-    font-size:24px;
+    font-size:25px;
 
     font-weight:700;
 }
@@ -301,7 +301,7 @@ body::after{
 
     line-height:1.8;
 
-    font-size:16px;
+    font-size:20px;
 
     font-weight:500;
 }
@@ -578,4 +578,88 @@ body::after{
     .main-content h1{
         font-size:28px;
     }
+}
+
+/* =========================
+   FOOD BENEFITS SECTION
+========================= */
+
+.benefits-section{
+
+    margin-top:50px;
+}
+
+.benefits-title{
+
+    font-size:32px;
+    margin-bottom:30px;
+
+    color:#4c1d95;
+    font-weight:700;
+}
+
+/* BENEFIT CARD */
+
+.benefit-card{
+
+    background:rgba(255,255,255,0.9);
+
+    border-radius:20px;
+
+    padding:25px;
+
+    margin-bottom:25px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+
+    border:1px solid rgba(124,58,237,0.12);
+
+    transition:0.3s;
+}
+
+.benefit-card:hover{
+
+    transform:translateY(-4px);
+}
+
+/* HEADINGS */
+
+.benefit-card h2{
+
+    color:#f97316;
+
+    margin-bottom:18px;
+
+    font-size:27px;
+}
+
+/* LIST */
+
+.benefit-card ul{
+
+    list-style:none;
+
+    padding:0;
+}
+
+/* LIST ITEMS */
+
+.benefit-card li{
+
+    margin-bottom:14px;
+
+    font-size:20px;
+
+    line-height:1.7;
+
+    color:#374151;
+
+    padding-left:8px;
+}
+
+/* FOOD NAME */
+
+.benefit-card strong{
+
+    color:#4c1d95;
 }

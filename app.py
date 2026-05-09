@@ -8,7 +8,6 @@ from models.user_model import User
 from models.fitness_model import FitnessProgress
 
 from ai.workout_ai import generate_workout
-from ai.diet_ai import generate_diet
 
 from utils.bmi import calculate_bmi
 from utils.calorie import calculate_calories
@@ -17,7 +16,8 @@ from routes.auth_routes import auth
 from routes.workout_routes import workout
 from routes.diet_routes import diet
 from routes.posture_routes import posture
-
+from ai.diet_ai import generate_diet, food_benefits
+from datetime import datetime
 from werkzeug.utils import secure_filename
 
 # =========================
@@ -76,6 +76,7 @@ camera = None
 @app.route('/')
 def home():
     return render_template('index.html')
+
 
 # =========================
 # DASHBOARD

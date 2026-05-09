@@ -21,9 +21,13 @@
     <link
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
+
     <link rel="icon" type="image/png" sizes="32x32" href="/static/images/logo.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/static/images/logo.png">
+
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/images/logo.png">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 </head>
 
 <body>
@@ -32,7 +36,7 @@
 
 <div class="sidebar">
 
-    <h2>AI FITNESS</h2>
+    <h2>Fitverse AI</h2>
 
     <ul>
 
@@ -122,6 +126,8 @@
 
     </h2>
 
+    <!-- DIET CARDS -->
+
     <div class="diet-cards">
 
         {% if today_diet %}
@@ -156,6 +162,54 @@
 
     </div>
 
+    <!-- FOOD BENEFITS SECTION -->
+
+<div class="benefits-section">
+
+    <h1 class="benefits-title">
+
+        Why These Foods?🥗
+
+    </h1>
+
+    {% if today_benefits %}
+
+        {% for meal, foods in today_benefits.items() %}
+
+        <div class="benefit-card">
+
+            <h2>{{ meal }} Benefits</h2>
+
+            <ul>
+
+                {% for food, benefit in foods.items() %}
+
+                <li>
+
+                    <strong>{{ food }}</strong> → {{ benefit }}
+
+                </li>
+
+                {% endfor %}
+
+            </ul>
+
+        </div>
+
+        {% endfor %}
+
+    {% else %}
+
+        <div class="benefit-card">
+
+            <h2>No Benefits Found</h2>
+
+            <p>No food benefits available.</p>
+
+        </div>
+
+    {% endif %}
+
 </div>
 
 <!-- LOGOUT POPUP -->
@@ -170,7 +224,7 @@ id="logoutPopup">
 
         <p>
 
-            Are you sure you want to leave your fitness grind? 
+            Are you sure you want to leave your fitness grind?
 
         </p>
 

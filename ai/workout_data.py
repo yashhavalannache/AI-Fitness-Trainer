@@ -125,7 +125,7 @@ WORKOUT_DETAILS = {
                 "name": "Hammer Curl",
                 "sets": "3 x 12",
                 "benefit": "Forearm strength.",
-                "video": "https://www.youtube.com/embed/vm0zV_WQerE"
+                "video": "https://www.youtube.com/embed/BRVDS6HVR9Q?si=3gAWK4mWUiFWQk6f"
             },
             {
                 "name": "Concentration Curl",
@@ -183,7 +183,7 @@ WORKOUT_DETAILS = {
                 "name": "Plank",
                 "sets": "3 x 60 sec",
                 "benefit": "Core stability.",
-                "video": "https://www.youtube.com/embed/F-C0CzNK22s"
+                "video": "https://www.youtube.com/embed/pvIjsG5Svck?si=PMN3etqNiOrljezJ"
             },
             {
                 "name": "Hanging Leg Raise",
@@ -218,7 +218,7 @@ WORKOUT_DETAILS = {
              "sets": "4 x 10", 
              "benefit": "Overall shoulder strength.", 
              "video": "https://www.youtube.com/embed/k6tzKisR3NY"},
-            {"name": "Lateral Raises", "sets": "4 x 15", "benefit": "Shoulder width.", "video": "https://www.youtube.com/embed/Kl3LEzQ5Zqs"},
+            {"name": "Lateral Raises", "sets": "4 x 15", "benefit": "Shoulder width.", "video": "https://www.youtube.com/embed/XPPfnSEATJA?si=4ZDpS7gTybTp9pvI"},
             {"name": "Front Raises", "sets": "3 x 12", "benefit": "Front delts.", "video": "https://www.youtube.com/embed/9ThlTL25DH8"},
             {"name": "Rear Delt Fly", "sets": "3 x 12", "benefit": "Rear shoulder balance.", "video": "https://www.youtube.com/embed/7tgx6QHB0-A"},
             {"name": "Face Pull", "sets": "3 x 15", "benefit": "Posture correction.", "video": "https://www.youtube.com/embed/IeOqdw9WI90"},
@@ -226,7 +226,7 @@ WORKOUT_DETAILS = {
             {"name": "Crunches", "sets": "4 x 20", "benefit": "Abs strength.", "video": "https://www.youtube.com/embed/ZKw4t23ERuw"},
             {"name": "Leg Raises", "sets": "3 x 12", "benefit": "Lower abs.", "video": "https://www.youtube.com/embed/Gw_3oAQyHXA"},
             {"name": "Bicycle Crunch", "sets": "3 x 20", "benefit": "Obliques.", "video": "https://www.youtube.com/embed/cFDS2S6Vqis"},
-            {"name": "Plank", "sets": "3 x 60 sec", "benefit": "Core endurance.", "video": "https://www.youtube.com/embed/xe2MXatLTUw"}
+            {"name": "Plank", "sets": "3 x 60 sec", "benefit": "Core endurance.", "video": "https://www.youtube.com/embed/pvIjsG5Svck?si=PMN3etqNiOrljezJ"}
         ]
     },
 
@@ -246,7 +246,7 @@ WORKOUT_DETAILS = {
             {"name": "Jump Rope", "sets": "5 min", "benefit": "Cardio conditioning.", "video": "https://www.youtube.com/embed/geAiKq9PPKM"},
             {"name": "Box Jumps", "sets": "3 x 10", "benefit": "Explosiveness.", "video": "https://www.youtube.com/embed/7EfeTsHZ5vk"},
             {"name": "Plank Jacks", "sets": "3 x 20", "benefit": "Core stability.", "video": "https://www.youtube.com/embed/kjvqHqVvUME"},
-            {"name": "Sprint Intervals", "sets": "5 rounds", "benefit": "Athletic stamina.", "video": "https://www.youtube.com/embed/bEY-ister9w"}
+            {"name": "Sprint Intervals", "sets": "5 rounds", "benefit": "Athletic stamina.", "video": "https://www.youtube.com/embed/wVMVtDqXOcE?si=y1DM187WMaPooOex"}
         ]
     },
 
@@ -257,16 +257,37 @@ WORKOUT_DETAILS = {
         "title": "Cardio + Mobility",
         "description": "Endurance, flexibility, recovery, and movement quality.",
         "exercises": [
-            {"name": "Treadmill Run", "sets": "20 min", "benefit": "Cardio endurance.", "video": "https://www.youtube.com/embed/m0FyBkKrCKI"},
+            {"name": "Treadmill Run", "sets": "20 min", "benefit": "Cardio endurance.", "video": "https://www.youtube.com/embed/8gWkLOFGzSo?si=6Dso2gjAyQKTzD60"},
             {"name": "Cycling", "sets": "15 min", "benefit": "Leg stamina.", "video": "https://www.youtube.com/embed/_b5nJSAW8Os"},
             {"name": "Jump Rope", "sets": "10 min", "benefit": "Coordination.", "video": "https://www.youtube.com/embed/Y9t6pc92Cic"},
-            {"name": "Dynamic Stretching", "sets": "15 min", "benefit": "Mobility.", "video": "https://www.youtube.com/embed/JA2tBX4wRUQ"},
-            {"name": "Yoga Flow", "sets": "20 min", "benefit": "Recovery.", "video": "https://www.youtube.com/embed/cHszlahroVQ"},
-            {"name": "Foam Rolling", "sets": "10 min", "benefit": "Muscle recovery.", "video": "https://www.youtube.com/embed/7_m0E0N-PtY"},
+            {"name": "Dynamic Stretching", "sets": "5 min", "benefit": "Mobility.", "video": "https://www.youtube.com/embed/uW3-Ue07H0M?si=RvAMvJO_wTx9awZ8"},
+            {"name": "Yoga Flow", "sets": "30 min", "benefit": "Recovery.", "video": "https://www.youtube.com/embed/2eC7TlC2NLs?si=Ac_M8vp32Xyyg3SB"},
+            {"name": "Foam Rolling", "sets": "10 min", "benefit": "Muscle recovery.", "video": "https://www.youtube.com/embed/DzSU2FiFKTM?si=MMqkd-9SR6CWoZB4"},
             {"name": "Walking Lunges", "sets": "3 x 15", "benefit": "Hip mobility.", "video": "https://www.youtube.com/embed/Agmpy7Pj1Nw"},
             {"name": "Arm Circles", "sets": "3 x 30 sec", "benefit": "Shoulder mobility.", "video": "https://www.youtube.com/embed/lzR7tzI1JUI"},
             {"name": "Hip Openers", "sets": "3 x 30 sec", "benefit": "Flexibility.", "video": "https://www.youtube.com/embed/fDC2KC1XqY8"},
-            {"name": "Breathing Exercises", "sets": "10 min", "benefit": "Relaxation.", "video": "https://www.youtube.com/embed/_fqr8XNubEI"}
+            {"name": "Breathing Exercises", "sets": "10 min", "benefit": "Relaxation.", "video": "https://www.youtube.com/embed/Z3g-evIsaFw?si=QSjACTpNASYCauKC"}
         ]
-    }
+    },
+
+
+# =========================
+# SUNDAY — REST + RECOVERY
+# =========================
+"Sunday": {
+    "title": "Rest + Recovery",
+    "description": "Muscle recovery, relaxation, mental refreshment, and preparation for the next training week.",
+    "exercises": [
+        {"name": "Light Walking", "sets": "20 min", "benefit": "Improves blood circulation.", "video": "https://www.youtube.com/embed/enYITYwvPAQ"},
+        {"name": "Full Body Stretching", "sets": "15 min", "benefit": "Reduces muscle tightness.", "video": "https://www.youtube.com/embed/g_tea8ZNk5A"},
+        {"name": "Yoga Recovery Flow", "sets": "20 min", "benefit": "Enhances flexibility and relaxation.", "video": "https://www.youtube.com/embed/v7AYKMP6rOE"},
+        {"name": "Foam Rolling", "sets": "10 min", "benefit": "Speeds up muscle recovery.", "video": "https://www.youtube.com/embed/DzSU2FiFKTM?si=MMqkd-9SR6CWoZB4"},
+        {"name": "Deep Breathing", "sets": "10 min", "benefit": "Reduces stress and improves focus.", "video": "https://www.youtube.com/embed/Z3g-evIsaFw?si=QSjACTpNASYCauKC"},
+        {"name": "Meditation", "sets": "10 min", "benefit": "Mental relaxation and recovery.", "video": "https://www.youtube.com/embed/inpok4MKVLM"},
+        {"name": "Neck Mobility", "sets": "25 min", "benefit": "Relieves neck stiffness.", "video": "https://www.youtube.com/embed/2NOsE-VPpkE"},
+        {"name": "Shoulder Stretch", "sets": "20 min", "benefit": "Improves shoulder flexibility.", "video": "https://www.youtube.com/embed/DmyeOteYnys?si=HkvGA6n4In9GBqYh"},
+        {"name": "Hamstring Stretch", "sets": "3 x 30 sec", "benefit": "Increases lower body flexibility.", "video": "https://www.youtube.com/embed/me22JRV7pJc?si=2TsEgjkGeARpQIpg"},
+        {"name": "Hydration + Relaxation", "sets": "All Day", "benefit": "Supports complete body recovery.", "video": "https://www.youtube.com/embed/JHjfZjerMZc?si=9_0us1mT_oLyuZHm"}
+    ]
+}
 }
