@@ -20,8 +20,8 @@ body{
     background-repeat:no-repeat;
     background-attachment:fixed;
 
-    overflow-x:hidden;
-  /* overflow: hidden;   🚫 disables scrolling */
+    /* overflow-x:hidden; */
+    overflow: hidden; 
     color:#1f2937;
     position:relative;
 }
@@ -63,6 +63,7 @@ body::after{
     display:flex;
     position:relative;
     z-index:2;
+     padding:20px 0;   /* 🔥 THIS FIXES TOP & BOTTOM TOUCH */
 }
 
 /* =========================
@@ -77,12 +78,15 @@ body::after{
     justify-content:center;
     align-items:center;
 
-    padding:40px 20px 40px 40px;
+    padding:20px 20px 20px 20 px;
 }
 
 .form-wrapper{
     width:100%;
     max-width:520px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
 /* =========================
@@ -93,7 +97,7 @@ body::after{
     background:rgba(255,255,255,0.78);
     backdrop-filter:blur(18px);
 
-    padding:38px;
+    padding:25px 20px 10px 20px;
     border-radius:30px;
 
     border:1px solid rgba(124,58,237,0.15);
@@ -103,7 +107,7 @@ body::after{
     width:100%;
 
     /* FIX: remove rigid height */
-    min-height:650px;
+    min-height:400px;
     height:auto;
 }
 
@@ -144,7 +148,7 @@ form{
     gap:14px;
 }
 
-/* =========================
+  /* =========================
    INPUTS
 ========================= */
 
@@ -163,6 +167,24 @@ select{
     transition:0.3s;
 
     font-size:14px;
+    cursor:pointer; /* 👈 makes dropdown feel clickable */
+}
+
+/* dropdown options fix */
+select option{
+    color:#111;
+    background:#fff;
+}
+
+select{
+    appearance:none;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='12'%20height='12'%20viewBox='0%200%2024%2024'%3E%3Cpath%20fill='%234c1d95'%20d='M7%2010l5%205%205-5z'/%3E%3C/svg%3E");
+    background-repeat:no-repeat;
+    background-position:right 15px center;
+    background-size:12px;
 }
 
 input:focus,
