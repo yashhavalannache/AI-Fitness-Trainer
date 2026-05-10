@@ -222,7 +222,10 @@ body::after{
 /* =========================
    TITLES
 ========================= */
-
+.main-content h1{
+    font-size:50px;
+    font-weight:800;
+}
 h1,h2,h3{
     text-align:center;
 }
@@ -230,7 +233,7 @@ h1,h2,h3{
 .main-content h1,
 .workout-section h2{
 
-    color:#7c3aed;
+    color:#000000;
 
     margin-bottom:30px;
 

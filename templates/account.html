@@ -17,9 +17,10 @@
     <link
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/png" sizes="32x32" href="/static/images/logo.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/static/images/logo.png">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/images/logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/images/logo.png">
+
 </head>
 
 <body>
@@ -32,66 +33,24 @@
 
     <ul>
 
-        <li>
+        <li><a href="/dashboard">Dashboard</a></li>
 
-            <a href="/dashboard">
+        <li><a href="/workout">Workout Plan</a></li>
 
-                Dashboard
+        <li><a href="/diet">Diet Plan</a></li>
 
-            </a>
-
-        </li>
+        <li><a href="/posture">Posture AI</a></li>
 
         <li>
-
-            <a href="/workout">
-
-                Workout Plan
-
-            </a>
-
-        </li>
-
-        <li>
-
-            <a href="/diet">
-
-                Diet Plan
-
-            </a>
-
-        </li>
-
-        <li>
-
-            <a href="/posture">
-
-                Posture AI
-
-            </a>
-
-        </li>
-
-        <li>
-
-            <a href="/account"
-            class="active">
-
+            <a href="/account" class="active">
                 Account
-
             </a>
-
         </li>
 
         <li>
-
-            <a href="#"
-            id="logoutBtn">
-
+            <a href="#" id="logoutBtn">
                 Logout
-
             </a>
-
         </li>
 
     </ul>
@@ -106,19 +65,11 @@
 
     <div class="top-bar">
 
-        <a
-        href="/dashboard"
-        class="back-btn">
-
+        <a href="/dashboard" class="back-btn">
             ← Back
-
         </a>
 
-        <h1>
-
-            My Profile
-
-        </h1>
+        <h1>My Profile</h1>
 
     </div>
 
@@ -131,8 +82,6 @@
         <div class="profile-card">
 
             <div class="profile-image-section">
-
-                <!-- PROFILE IMAGE -->
 
                 <img
                 id="profilePreview"
@@ -151,7 +100,7 @@
                 <form
                 id="uploadForm"
                 method="POST"
-                action="{{ url_for('upload_profile_pic') }}"
+                action="/upload_profile_pic"
                 enctype="multipart/form-data">
 
                     <input
@@ -170,9 +119,7 @@
                     </label>
 
                     <p id="fileName">
-
                         No image selected
-
                     </p>
 
                 </form>
@@ -186,9 +133,7 @@
                 <h2>{{ user.name }}</h2>
 
                 <p class="member-tag">
-
                     AI Fitness Member 🚀
-
                 </p>
 
                 <!-- STATS -->
@@ -196,27 +141,18 @@
                 <div class="stats">
 
                     <div class="stat-box">
-
                         <h3>{{ user.age }}</h3>
-
                         <p>Age</p>
-
                     </div>
 
                     <div class="stat-box">
-
                         <h3>{{ user.weight }}</h3>
-
                         <p>Weight</p>
-
                     </div>
 
                     <div class="stat-box">
-
                         <h3>{{ user.height }}</h3>
-
                         <p>Height</p>
-
                     </div>
 
                 </div>
@@ -229,27 +165,23 @@
 
         <div class="details-card">
 
+            <!-- ACCOUNT DETAILS -->
+
             <div class="section-title">
 
                 <h2>
-
                     Account Details ⚡
-
                 </h2>
 
                 <p>
-
                     Update your fitness identity and goals
-
                 </p>
 
             </div>
 
             <!-- UPDATE FORM -->
 
-            <form
-            method="POST"
-            action="/update_account">
+            <form method="POST" action="/update_account">
 
                 <div class="form-grid">
 
@@ -314,9 +246,7 @@
                             {% if user.goal == "weight_loss" %}
                             selected
                             {% endif %}>
-
                                 Weight Loss 🔥
-
                             </option>
 
                             <option
@@ -324,9 +254,7 @@
                             {% if user.goal == "muscle_gain" %}
                             selected
                             {% endif %}>
-
                                 Muscle Gain 💪
-
                             </option>
 
                             <option
@@ -334,9 +262,7 @@
                             {% if user.goal == "maintenance" %}
                             selected
                             {% endif %}>
-
                                 Maintenance ⚖️
-
                             </option>
 
                         </select>
@@ -354,21 +280,125 @@
                 </button>
 
             </form>
+<!-- CHANGE PASSWORD -->
 
+<div
+class="danger-zone password-section"
+id="passwordSection">
+
+    <h3>
+
+        Change Password 🔐
+
+    </h3>
+
+    <p>
+
+        Secure your account using OTP verification.
+
+    </p>
+{% with messages = get_flashed_messages() %}
+
+    {% if messages %}
+
+        {% for message in messages %}
+
+            <div class="otp-message flash-message">
+
+    {{ message }}
+
+</div>
+
+        {% endfor %}
+
+    {% endif %}
+
+{% endwith %}
+   
+
+    <!-- SEND OTP -->
+
+    <form
+    method="POST"
+    action="/send_otp#passwordSection">
+
+        <button
+        type="submit"
+        class="otp-btn">
+
+            Send OTP📩
+
+        </button>
+
+    </form>
+
+    <!-- CHANGE PASSWORD FORM -->
+
+    <form
+    method="POST"
+    action="/change_password#passwordSection">
+
+        <div class="form-grid">
+
+            <div class="input-box">
+
+                <label>Enter OTP</label>
+
+                <input
+                type="text"
+                name="otp"
+                placeholder="Enter OTP"
+                required>
+
+            </div>
+
+            <div class="input-box">
+
+                <label>New Password</label>
+
+                <input
+                type="password"
+                name="new_password"
+                placeholder="New Password"
+                required>
+
+            </div>
+
+            <div class="input-box">
+
+                <label>Confirm Password</label>
+
+                <input
+                type="password"
+                name="confirm_password"
+                placeholder="Confirm Password"
+                required>
+
+            </div>
+
+        </div>
+
+        <button
+        type="submit"
+        class="change-pass-btn">
+
+            Change Password 
+
+        </button>
+
+    </form>
+
+</div>
             <!-- DANGER ZONE -->
 
             <div class="danger-zone">
 
                 <h3>
-
                     Danger Zone ⚠️
-
                 </h3>
 
                 <p>
-
                     Deleting your account will permanently remove all fitness data.
-
                 </p>
 
                 <button
@@ -396,16 +426,10 @@ id="logoutPopup">
 
     <div class="logout-box">
 
-        <h2>
-
-            Logout?
-
-        </h2>
+        <h2>Logout?</h2>
 
         <p>
-
             Are you sure you want to leave your fitness grind?
-
         </p>
 
         <div class="logout-actions">
@@ -432,7 +456,7 @@ id="logoutPopup">
 
 </div>
 
-<!-- DELETE ACCOUNT POPUP -->
+<!-- DELETE POPUP -->
 
 <div
 class="logout-popup"
@@ -440,16 +464,10 @@ id="deletePopup">
 
     <div class="logout-box">
 
-        <h2>
-
-            Delete Account?
-
-        </h2>
+        <h2>Delete Account?</h2>
 
         <p>
-
-            This action is permanent and all your fitness data will be lost forever⚠️
-
+            This action is permanent and all your fitness data will be lost forever ⚠️
         </p>
 
         <div class="logout-actions">
@@ -486,9 +504,7 @@ id="deletePopup">
 
 <script>
 
-/* =========================
-   PROFILE IMAGE PREVIEW
-========================= */
+/* PROFILE IMAGE */
 
 const profileInput =
 document.getElementById("profileInput");
@@ -533,24 +549,7 @@ profileInput.addEventListener("change", function(){
 
 });
 
-/* =========================
-   PREVENT IMAGE CACHE
-========================= */
-
-window.addEventListener("load", () => {
-
-    const avatar =
-    document.getElementById("profilePreview");
-
-    avatar.src =
-    avatar.src.split("?")[0] +
-    "?t=" + new Date().getTime();
-
-});
-
-/* =========================
-   LOGOUT POPUP
-========================= */
+/* LOGOUT POPUP */
 
 const logoutBtn =
 document.getElementById("logoutBtn");
@@ -575,19 +574,7 @@ cancelLogout.addEventListener("click", function(){
 
 });
 
-logoutPopup.addEventListener("click", function(e){
-
-    if(e.target === logoutPopup){
-
-        logoutPopup.classList.remove("active");
-
-    }
-
-});
-
-/* =========================
-   DELETE ACCOUNT POPUP
-========================= */
+/* DELETE POPUP */
 
 const deleteBtn =
 document.getElementById("deleteBtn");
@@ -609,29 +596,24 @@ cancelDelete.addEventListener("click", function(){
     deletePopup.classList.remove("active");
 
 });
-
-deletePopup.addEventListener("click", function(e){
-
-    if(e.target === deletePopup){
-
-        deletePopup.classList.remove("active");
-
-    }
-
-});
-
 /* =========================
-   STOP CAMERA
+   AUTO REMOVE FLASH MESSAGE
 ========================= */
 
-window.addEventListener("beforeunload", function () {
+setTimeout(() => {
 
-    navigator.sendBeacon("/stop_camera");
+    const flashMessages =
+    document.querySelectorAll(".flash-message");
 
-});
+    flashMessages.forEach(msg => {
 
+        msg.remove();
+
+    });
+
+}, 4500);
 </script>
 
 </body>
-
 </html>
+

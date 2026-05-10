@@ -192,9 +192,9 @@ body::after{
 
     margin-bottom:45px;
 
-    color:#4c1d95;
+    color:#010002;
 
-    font-size:42px;
+    font-size:50px;
 
     text-align:center;
 
@@ -410,7 +410,7 @@ body::after{
 
     margin-bottom:14px;
 
-    font-size:24px;
+    font-size:26px;
 
     font-weight:700;
 }
@@ -425,7 +425,7 @@ body::after{
 
     line-height:1.8;
 
-    font-size:16px;
+    font-size:20px;
 }
 
 /* PROGRESS NUMBERS */
@@ -445,13 +445,13 @@ body::after{
 
 .chart-container{
 
-    background:rgba(255,255,255,0.78);
-
+    background:rgba(201, 222, 228, 0.78);
+    
     padding:35px;
 
     border-radius:24px;
 
-    border:1px solid rgba(124,58,237,0.12);
+    border:1px solid rgba(3, 0, 8, 0.12);
 
     backdrop-filter:blur(14px);
 

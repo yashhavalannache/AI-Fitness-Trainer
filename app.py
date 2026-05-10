@@ -19,6 +19,8 @@ from routes.posture_routes import posture
 from ai.diet_ai import generate_diet, food_benefits
 from datetime import datetime
 from werkzeug.utils import secure_filename
+import random
+from flask_mail import Mail, Message
 
 # =========================
 # FLASK APP
@@ -29,7 +31,21 @@ app = Flask(__name__)
 # SECRET KEY
 # =========================
 app.secret_key = "fitness_secret_key"
+# =========================
+# MAIL CONFIG
+# =========================
 
+app.config['MAIL_SERVER'] = 'smtp.gmail.com'
+app.config['MAIL_PORT'] = 587
+app.config['MAIL_USE_TLS'] = True
+
+# YOUR EMAIL
+app.config['MAIL_USERNAME'] = 'thunderbolt1899@gmail.com'
+
+# YOUR APP PASSWORD
+app.config['MAIL_PASSWORD'] = 'kvmpextpukbtnllj'
+
+mail = Mail(app)
 # =========================
 # BASE DIRECTORY
 # =========================
@@ -300,6 +316,104 @@ def upload_profile_pic():
     flash("Profile picture uploaded successfully 📸")
 
     return redirect(url_for('account'))
+
+
+# =========================
+# SEND OTP
+# =========================
+@app.route('/send_otp', methods=['POST'])
+def send_otp():
+    print("SEND OTP ROUTE WORKING")
+
+    if 'user_id' not in session:
+        return redirect(url_for('login'))
+
+    user = User.query.get(session['user_id'])
+
+    otp = str(random.randint(100000, 999999))
+
+    session['otp'] = otp
+
+    try:
+
+        msg = Message(
+            'Fitverse AI Password Reset OTP',
+            sender=app.config['MAIL_USERNAME'],
+            recipients=[user.email]
+        )
+
+        msg.body = f'''
+Hello {user.name},
+
+We received a request to change the password for your Fitverse AI account.
+
+Your One-Time Password (OTP) for verification is:
+
+🔐 OTP: {otp}
+
+This OTP is valid for a limited time and should not be shared with anyone for security reasons.
+
+If you did not request a password change, please ignore this email and keep your account secure.
+
+Stay strong and keep pushing your fitness journey 💪
+
+Best Regards,
+Team Fitverse AI
+        '''
+
+        mail.send(msg)
+
+        flash("OTP sent successfully 📩")
+
+    except Exception as e:
+
+        print(e)
+
+        flash("Failed to send OTP ❌")
+
+    return redirect('/account#passwordSection')
+
+
+# =========================
+# CHANGE PASSWORD
+# =========================
+@app.route('/change_password', methods=['POST'])
+def change_password():
+
+    if 'user_id' not in session:
+        return redirect(url_for('login'))
+
+    user = User.query.get(session['user_id'])
+
+    entered_otp = request.form['otp']
+    new_password = request.form['new_password']
+    confirm_password = request.form['confirm_password']
+
+    # CHECK OTP
+    if entered_otp != session.get('otp'):
+
+        flash("Invalid OTP ❌")
+
+        return redirect(url_for('account'))
+
+    # CHECK PASSWORD MATCH
+    if new_password != confirm_password:
+
+        flash("Passwords do not match ⚠️")
+
+        return redirect(url_for('account'))
+
+    # UPDATE PASSWORD
+    user.password = new_password
+
+    db.session.commit()
+
+    # REMOVE OTP
+    session.pop('otp', None)
+
+    flash("Password changed successfully ")
+
+    return redirect('/account#passwordSection')
 
 
 #=================LOGIN========================
