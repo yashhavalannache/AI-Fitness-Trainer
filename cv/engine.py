@@ -1,5 +1,6 @@
 import cv2
 import mediapipe as mp
+mp.solutions
 import time
 
 from cv.exercise_config import EXERCISES
