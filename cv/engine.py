@@ -1,6 +1,8 @@
 import cv2
 import mediapipe as mp
-mp.solutions
+
+mp_pose = mp.solutions.pose
+mp_drawing = mp.solutions.drawing_utils
 import time
 
 from cv.exercise_config import EXERCISES
