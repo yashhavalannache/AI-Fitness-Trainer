@@ -43,7 +43,7 @@ app.config['MAIL_USE_TLS'] = True
 app.config['MAIL_USERNAME'] = 'thunderbolt1899@gmail.com'
 
 # YOUR APP PASSWORD
-app.config['MAIL_PASSWORD'] = 'kvmpextpukbtnllj'
+app.config['MAIL_PASSWORD'] = 'xhrradxdxttnmnmk'
 
 mail = Mail(app)
 # =========================
