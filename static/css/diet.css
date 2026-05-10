@@ -503,80 +503,203 @@ body::after{
         opacity:1;
     }
 }
-
 /* =========================
-   SAFE RESPONSIVE FIX (NO DESIGN CHANGE)
+   FINAL RESPONSIVE FIX
 ========================= */
 
-/* Tablet */
+/* TABLETS */
+
 @media(max-width:900px){
 
+    body{
+        overflow-y:auto !important;
+        overflow-x:hidden !important;
+    }
+
     .sidebar{
-        width:230px;
+        width:220px;
+        height:100vh;
+        overflow-y:auto;
     }
 
     .main-content{
         margin-left:240px;
         padding:35px;
+        width:calc(100% - 240px);
+    }
+
+    .diet-cards{
+        grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
     }
 }
 
-/* Mobile */
+/* MOBILE */
+
 @media(max-width:768px){
 
-    /* Hide sidebar safely */
+    /* BODY FIX */
+    body{
+
+        display:block !important;
+
+        min-height:100vh;
+
+        overflow-y:auto !important;
+
+        overflow-x:hidden !important;
+    }
+
+    /* SIDEBAR SHOW ON TOP */
     .sidebar{
-        display:none;
+
+        display:block !important;
+
+        position:relative !important;
+
+        width:100% !important;
+
+        height:auto !important;
+
+        padding:20px 15px !important;
+
+        border-right:none !important;
+
+        border-bottom:1px solid rgba(124,58,237,0.12);
+
+        overflow:visible !important;
     }
 
-    /* Reset layout spacing */
+    /* SIDEBAR MENU */
+    .sidebar ul{
+
+        display:flex;
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+        gap:10px;
+    }
+
+    .sidebar ul li{
+        margin:0 !important;
+    }
+
+    .sidebar ul li a{
+
+        padding:10px 15px;
+
+        font-size:14px;
+
+        border-radius:12px;
+    }
+
+    /* LOGO */
+    .sidebar h2{
+
+        margin-bottom:20px;
+
+        font-size:24px;
+    }
+
+    /* MAIN CONTENT */
     .main-content{
-        margin-left:0;
-        padding:22px;
+
+        margin-left:0 !important;
+
+        width:100% !important;
+
+        padding:22px !important;
     }
 
-    /* Title scaling only */
+    /* TITLE */
     .main-content h1{
-        font-size:32px;
+
+        font-size:32px !important;
+
+        line-height:1.3;
     }
 
-    /* Grid safety (no design change, only stacking behavior) */
+    /* CARDS */
     .diet-cards{
-        grid-template-columns:1fr;
+
+        grid-template-columns:1fr !important;
+
         gap:18px;
     }
 
-    /* Card spacing safety */
     .diet-card{
-        padding:26px;
+
+        padding:24px !important;
     }
 
-    /* Text readability */
+    /* TEXT */
     .diet-card h2{
-        font-size:22px;
+
+        font-size:22px !important;
     }
 
     .diet-card p{
-        font-size:15px;
+
+        font-size:16px !important;
+
         line-height:1.7;
     }
 
-    /* Modal safety */
+    /* BENEFITS */
+    .benefits-title{
+
+        font-size:26px !important;
+    }
+
+    .benefit-card{
+
+        padding:22px !important;
+    }
+
+    .benefit-card h2{
+
+        font-size:23px !important;
+    }
+
+    .benefit-card li{
+
+        font-size:16px !important;
+    }
+
+    /* MODAL */
     .logout-box{
-        width:90%;
+
+        width:92% !important;
+
         max-width:400px;
     }
 }
 
-/* Small mobile */
+/* SMALL MOBILE */
+
 @media(max-width:480px){
 
     .main-content{
-        padding:18px;
+        padding:16px !important;
     }
 
     .main-content h1{
-        font-size:28px;
+        font-size:26px !important;
+    }
+
+    .sidebar h2{
+        font-size:22px !important;
+    }
+
+    .diet-card,
+    .benefit-card{
+        padding:20px !important;
+    }
+
+    .diet-card p,
+    .benefit-card li{
+        font-size:15px !important;
     }
 }
 

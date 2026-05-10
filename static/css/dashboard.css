@@ -38,11 +38,9 @@ body::before{
     z-index:-5;
 }
 
-
 /* =========================
    GLOW EFFECTS
 ========================= */
-
 
 body::after{
     content:"";
@@ -484,8 +482,13 @@ body::after{
 
 @media(max-width:768px){
 
+    /* FIXED: sidebar now visible + scrollable */
     .sidebar{
-        display:none;
+        display:block;
+        width:220px;
+        height:100vh;
+        overflow-y:auto;
+        -webkit-overflow-scrolling:touch;
     }
 
     .main-content{
@@ -515,7 +518,6 @@ body::after{
         font-size:28px;
     }
 }
-
 /* =========================
    LOGOUT MODAL
 ========================= */
