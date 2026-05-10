@@ -17,15 +17,22 @@ This project combines web development (Flask, HTML, CSS) with intelligent logic 
 
 ## Screenshots
 
-### 🏠 Home Page (Index)
+### 🏠 Home Page + Dashboard
 <p align="center">
   <img src="static/images/index.jpeg" width="45%" />
-  <img src="static/images/login.jpeg" width="45%" />
+  <img src="static/images/dashboard.jpeg" width="45%" />
 </p>
 
-### 📝 Register + 💪 Workout
+### Register +  Register
 <p align="center">
+  <img src="static/images/login.jpeg" width="45%" />
   <img src="static/images/register.jpeg" width="45%" />
+</p>
+
+
+### Diet Plan + Workout
+<p align="center">
+  <img src="static/images/dietplan.jpeg" width="45%" />
   <img src="static/images/workout.jpeg" width="45%" />
 </p>
 
