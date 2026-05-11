@@ -11,9 +11,21 @@
 
 body{
     min-height:100vh;
-    background:linear-gradient(135deg,#f7f3ff,#fff7ed);
+
+    /* DESKTOP BACKGROUND */
+    background:
+    linear-gradient(rgba(247,243,255,0.78),rgba(255,247,237,0.78)),
+    url("/static/images/login.jpeg");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+
     overflow-x:hidden;
+
     color:#1f2937;
+
     position:relative;
 }
 
@@ -75,9 +87,11 @@ body::after{
     position:absolute;
     inset:25px;
     border-radius:35px;
+
     background:
         linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35)),
         url("/static/images/loginfitness.jpeg");
+
     background-size:cover;
     background-position:center;
 }
@@ -172,95 +186,98 @@ body::after{
 /* =========================
    FLASH MESSAGE
 ========================= */
-.flash-message {
-    padding: 12px;
-    margin-bottom: 15px;
-    border-radius: 8px;
-    font-weight: 600;
-    text-align: center;
+
+.flash-message{
+    padding:12px;
+    margin-bottom:15px;
+    border-radius:8px;
+    font-weight:600;
+    text-align:center;
 }
 
 /* SUCCESS */
-.flash-message.success {
-    background: #d4edda;
-    color: #155724;
-    border: 1px solid #c3e6cb;
+
+.flash-message.success{
+    background:#d4edda;
+    color:#155724;
+    border:1px solid #c3e6cb;
 }
 
 /* ERROR */
-.flash-message.error {
-    background: #f8d7da;
-    color: #721c24;
-    border: 1px solid #f5c6cb;
-}
 
+.flash-message.error{
+    background:#f8d7da;
+    color:#721c24;
+    border:1px solid #f5c6cb;
+}
 
 /* =========================
-   TOAST SYSTEM (GLASSMORPHISM)
+   TOAST SYSTEM
 ========================= */
 
-#toast-container {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 9999;
+#toast-container{
+    position:fixed;
+    top:20px;
+    right:20px;
+    z-index:9999;
 }
 
-/* Base Toast */
-.toast {
-    min-width: 260px;
-    margin-bottom: 12px;
-    padding: 14px 18px;
-    border-radius: 12px;
+.toast{
+    min-width:260px;
+    margin-bottom:12px;
+    padding:14px 18px;
+    border-radius:12px;
 
-    color: #0a0000;
-    font-weight: 600;
-    font-size: 14px;
+    color:#0a0000;
+    font-weight:600;
+    font-size:14px;
 
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
 
-    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    box-shadow:0 8px 25px rgba(0,0,0,0.2);
 
-    opacity: 0;
-    transform: translateX(120%);
-    animation: slideIn 0.5s forwards, fadeOut 0.5s forwards 2.5s;
+    opacity:0;
+    transform:translateX(120%);
+    animation:slideIn 0.5s forwards, fadeOut 0.5s forwards 2.5s;
 }
 
 /* SUCCESS */
-.toast.success {
-    background: rgba(46, 233, 124, 0.25);
-    border: 1px solid rgba(46, 204, 113, 0.4);
+
+.toast.success{
+    background:rgba(46,233,124,0.25);
+    border:1px solid rgba(46,204,113,0.4);
 }
 
 /* ERROR */
-.toast.error {
-    background: rgba(231, 76, 60, 0.25);
-    border: 1px solid rgba(231, 76, 60, 0.4);
+
+.toast.error{
+    background:rgba(231,76,60,0.25);
+    border:1px solid rgba(231,76,60,0.4);
 }
 
 /* WARNING */
-.toast.warning {
-    background: rgba(241, 196, 15, 0.25);
-    border: 1px solid rgba(241, 196, 15, 0.4);
+
+.toast.warning{
+    background:rgba(241,196,15,0.25);
+    border:1px solid rgba(241,196,15,0.4);
 }
 
 /* ANIMATION */
-@keyframes slideIn {
-    to {
-        opacity: 1;
-        transform: translateX(0);
+
+@keyframes slideIn{
+    to{
+        opacity:1;
+        transform:translateX(0);
     }
 }
 
-@keyframes fadeOut {
-    to {
-        opacity: 0;
-        transform: translateX(120%);
+@keyframes fadeOut{
+    to{
+        opacity:0;
+        transform:translateX(120%);
     }
 }
-
-
 
 /* =========================
    LOGIN BOX
@@ -378,282 +395,203 @@ button:hover{
         transform:translateY(0);
     }
 }
-/* =========================
-   COMPLETE RESPONSIVE + SCROLL FIX
-   ADD THIS AT THE VERY BOTTOM
-========================= */
 
-/* LARGE TABLETS */
+/* =========================
+   RESPONSIVE FIX
+========================= */
 
 @media (max-width:1100px){
 
     html,
     body{
-
         width:100%;
-
         overflow-x:hidden !important;
-
         overflow-y:auto !important;
-
         min-height:100%;
     }
 
-    body{
-        position:relative;
-    }
-
     .main-container{
-
         flex-direction:column;
-
         min-height:auto;
     }
 
-    /* HIDE LEFT IMAGE SECTION */
     .left-section{
-
         display:none !important;
     }
 
-    /* FULL WIDTH LOGIN */
     .right-section{
-
         width:100% !important;
-
         min-height:100vh;
-
         padding:40px 25px !important;
-
         display:flex;
-
         justify-content:center;
-
         align-items:center;
     }
 
     .login-wrapper{
-
         width:100%;
-
         max-width:500px;
     }
 
     .login-box{
-
         width:100%;
-
         padding:40px !important;
     }
 }
 
-/* MOBILE */
+/* =========================
+   MOBILE VIEW
+========================= */
 
 @media (max-width:768px){
 
-    /* GLOBAL FIX */
-    html,
     body{
 
+        /* MOBILE BACKGROUND */
+        background:
+        linear-gradient(rgba(247,243,255,0.82),rgba(255,247,237,0.82)),
+        url("/static/images/loginmobile.jpeg");
+
+        background-size:cover;
+        background-position:center;
+        background-repeat:no-repeat;
+        background-attachment:fixed;
+    }
+
+    html,
+    body{
         width:100%;
-
         overflow-x:hidden !important;
-
         overflow-y:auto !important;
-
         min-height:100%;
     }
 
     body{
-
         display:block !important;
-
         position:relative;
     }
 
-    /* GLOW FIX */
     body::before{
-
         width:260px !important;
-
         height:260px !important;
-
         top:-120px;
-
         left:-120px;
     }
 
     body::after{
-
         width:260px !important;
-
         height:260px !important;
-
         bottom:-120px;
-
         right:-120px;
     }
 
-    /* MAIN LAYOUT */
     .main-container{
-
         width:100%;
-
         min-height:auto;
-
         display:block !important;
     }
 
-    /* REMOVE IMAGE SECTION */
     .left-section{
-
         display:none !important;
     }
 
-    /* RIGHT SECTION */
     .right-section{
-
         width:100% !important;
-
         min-height:100vh;
-
         padding:25px 18px !important;
-
         display:flex;
-
         justify-content:center;
-
         align-items:center;
     }
 
-    /* LOGIN WRAPPER */
     .login-wrapper{
-
         width:100%;
-
         max-width:100%;
     }
 
-    /* LOGIN BOX */
     .login-box{
-
         width:100%;
-
         padding:28px !important;
-
         border-radius:22px !important;
     }
 
-    /* HEADING */
     .login-box h1{
-
         font-size:30px !important;
-
         line-height:1.2;
     }
 
-    /* SUBTITLE */
     .subtitle{
-
         font-size:14px !important;
-
         line-height:1.7;
     }
 
-    /* FORM */
     form{
-
         gap:16px;
     }
 
-    /* INPUTS */
     input{
-
         width:100%;
-
         padding:15px !important;
-
         font-size:15px !important;
     }
 
-    /* BUTTON */
     button{
-
         width:100%;
-
         padding:15px !important;
-
         font-size:15px !important;
     }
 
-    /* REGISTER TEXT */
     .register-text{
-
         font-size:14px !important;
-
         line-height:1.6;
     }
 
-    /* TOAST FIX */
     #toast-container{
-
         top:15px !important;
-
         right:10px !important;
-
         left:10px !important;
     }
 
     .toast{
-
         width:100%;
-
         min-width:auto !important;
     }
 }
 
-/* SMALL PHONES */
+/* =========================
+   SMALL PHONES
+========================= */
 
 @media (max-width:480px){
 
     .right-section{
-
         padding:18px 12px !important;
     }
 
     .login-box{
-
         padding:22px !important;
-
         border-radius:18px !important;
     }
 
     .login-box h1{
-
         font-size:26px !important;
     }
 
     .subtitle{
-
         font-size:13px !important;
     }
 
     input{
-
         padding:14px !important;
-
         font-size:14px !important;
     }
 
     button{
-
         padding:14px !important;
-
         font-size:14px !important;
     }
 
     .register-text{
-
         font-size:13px !important;
     }
 }

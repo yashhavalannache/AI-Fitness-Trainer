@@ -174,13 +174,16 @@ body::after{
 ========================= */
 
 .hero{
-     margin-top:80px;
-    height:70vh;
+    margin-top:5px;
+    min-height:80vh;
+
     display:flex;
     align-items:center;
     justify-content:center;
+
     text-align:center;
-    padding:120px 20px 20px 30px;
+
+    padding:120px 20px 40px 30px;
 }
 
 /* HERO CONTENT */
@@ -434,24 +437,26 @@ footer{
     }
 }
 
-/* ========================= */
+/* =========================
    PREMIUM SHOWCASE SECTION
-/* ========================= */ */
+========================= */
 
 .predictable-section{
-    padding:30px 6%;
+    padding:60px 6%;
 }
+
+/* HEADER */
 
 .predictable-header{
     text-align:center;
-    margin-bottom:50px;
+    margin-bottom:60px;
 }
 
 .predictable-header h2{
     font-size:70px;
-    line-height:1;
+    line-height:1.1;
     color:#4c1d95;
-    font-weight:600px;
+    font-weight:800;
     text-transform:uppercase;
     margin-bottom:20px;
 }
@@ -459,72 +464,232 @@ footer{
 .predictable-header p{
     color:#05020a;
     font-size:24px;
-    max-width:800px;
+    max-width:900px;
     margin:auto;
+    line-height:1.8;
 }
+
+/* =========================
+   GRID FIX
+========================= */
 
 .predictable-grid{
+
+    width:100%;
+
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(320px,700px));
-    justify-content:center;
-    gap:10px;
+
+    grid-template-columns:repeat(2, 1fr);
+
+    gap:30px;
+
+    align-items:stretch;
 }
+
+/* =========================
+   CARD
+========================= */
 
 .predict-card{
+
     position:relative;
-    min-height:500px;
-    max-width:650px;
+
     width:100%;
-    margin:auto;
+
+    height:520px;
+
     border-radius:36px;
+
     overflow:hidden;
-    display:flex; /* enables flexbox */
-    align-items:flex-end; /* moves content to bottom vertically */
+
+    display:flex;
+
+    align-items:flex-end;
+
     padding:40px;
+
     transition:0.4s ease;
-    border:1px solid rgba(59,130,246,0.3);
-    box-shadow:0 0 35px rgba(37,99,235,0.25);
+
+    border:1px solid rgba(59,130,246,0.25);
+
+    box-shadow:0 0 35px rgba(37,99,235,0.18);
+
+    background-size:cover !important;
+
+    background-position:center !important;
+
+    background-repeat:no-repeat !important;
 }
 
+/* HOVER */
+
 .predict-card:hover{
+
     transform:translateY(-8px) scale(1.01);
-    box-shadow:0 0 45px rgba(56,189,248,0.45);
+
+    box-shadow:0 0 45px rgba(56,189,248,0.35);
 }
+
+/* =========================
+   BACKGROUND IMAGES
+========================= */
 
 .left-card{
     background:
-    linear-gradient(to top, rgba(0,0,0,0.88), rgba(0,0,0,0.2)),
-    url('/static/images/gym-phone.png') center center/cover no-repeat;
+    linear-gradient(
+        to top,
+        rgba(0,0,0,0.88),
+        rgba(0,0,0,0.18)
+    ),
+    url('/static/images/gym-phone.png');
 }
 
 .right-card{
     background:
-    linear-gradient(to top, rgba(0,0,0,0.88), rgba(0,0,0,0.2)),
-    url('/static/images/gym-woman.png') center center/cover no-repeat;
+    linear-gradient(
+        to top,
+        rgba(0,0,0,0.88),
+        rgba(0,0,0,0.18)
+    ),
+    url('/static/images/gym-woman.png');
 }
+
+/* =========================
+   CONTENT
+========================= */
 
 .predict-content{
     position:relative;
     z-index:2;
+    width:100%;
 }
 
 .predict-content h3{
+
     font-size:42px;
-    line-height:1.1;
+
+    line-height:1.15;
+
     text-align:left;
-    color:#faf5f5;
+
+    color:#ffffff;
+
     margin-bottom:20px;
-    font-weight:600;
+
+    font-weight:800;
 }
 
 .predict-content p{
+
     text-align:left;
-    color:#f6f7f8;
+
+    color:#f3f4f6;
+
     font-size:20px;
-    line-height:1.7;
-    max-width:620px;
+
+    line-height:1.8;
+
+    max-width:520px;
 }
 
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width:992px){
+
+    .predictable-grid{
+
+        grid-template-columns:1fr;
+    }
+
+    .predict-card{
+
+        height:460px;
+    }
+
+    .predictable-header h2{
+
+        font-size:52px;
+    }
+
+    .predictable-header p{
+
+        font-size:20px;
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width:768px){
+
+    .predictable-section{
+
+        padding:50px 18px;
+    }
+
+    .predict-card{
+
+        height:380px;
+
+        padding:25px;
+
+        border-radius:28px;
+    }
+
+    .predict-content h3{
+
+        font-size:28px;
+    }
+
+    .predict-content p{
+
+        font-size:15px;
+
+        line-height:1.7;
+    }
+
+    .predictable-header h2{
+
+        font-size:36px;
+    }
+
+    .predictable-header p{
+
+        font-size:16px;
+    }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width:480px){
+
+    .predict-card{
+
+        height:320px;
+
+        padding:20px;
+    }
+
+    .predict-content h3{
+
+        font-size:24px;
+    }
+
+    .predict-content p{
+
+        font-size:14px;
+    }
+
+    .predictable-header h2{
+
+        font-size:28px;
+    }
+}
 /* CTA SECTION */
 
 .cta-section{
@@ -1208,25 +1373,76 @@ footer{
     /* PREDICT GRID */
     .predictable-grid{
 
-        grid-template-columns:1fr !important;
-    }
+    width:100%;
+
+    display:grid;
+
+    grid-template-columns:repeat(2, 1fr);
+
+    gap:30px;
+
+    align-items:stretch;
+}
 
     .predict-card{
 
-        min-height:360px !important;
+    position:relative;
 
-        padding:24px !important;
-    }
+    width:100%;
+
+    height:520px;
+
+    border-radius:36px;
+
+    overflow:hidden;
+
+    display:flex;
+
+    align-items:flex-end;
+
+    padding:40px;
+
+    transition:0.4s ease;
+
+    border:1px solid rgba(59,130,246,0.25);
+
+    box-shadow:0 0 35px rgba(37,99,235,0.18);
+
+    background-size:cover !important;
+
+    background-position:center !important;
+
+    background-repeat:no-repeat !important;
+}
+
 
     .predict-content h3{
 
-        font-size:26px !important;
-    }
+    font-size:42px;
+
+    line-height:1.15;
+
+    text-align:left;
+
+    color:#ffffff;
+
+    margin-bottom:20px;
+
+    font-weight:800;
+}
 
     .predict-content p{
 
-        font-size:15px !important;
-    }
+    text-align:left;
+
+    color:#f3f4f6;
+
+    font-size:20px;
+
+    line-height:1.8;
+
+    max-width:520px;
+}
 
     /* BLOGS */
     .blog-grid{
