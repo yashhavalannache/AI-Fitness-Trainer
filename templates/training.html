@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexible Training</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='css/training.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/images/logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/images/logo.png">
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            Fitverse AI
+        </div>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/register" class="nav-btn">Get Started</a>
+        </div>
+
+    </nav>
+
+    <!-- =========================
+         HERO SECTION
+    ========================== -->
+
+    <section class="hero-section">
+
+        <div class="hero-content">
+
+            <h1>
+                Fitness That Fits
+                <br>
+                Your Life
+            </h1>
+
+            <p>
+                Whether you have 5 minutes or 50, adaptive AI workouts
+                are designed around your schedule, energy levels,
+                equipment, and lifestyle.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="/register" class="primary-btn">
+                    Start Flexible Training
+                </a>
+
+                <a href="/login" class="secondary-btn">
+                    Login
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+         TRAIN ANYWHERE
+    ========================== -->
+
+    <section class="section">
+
+        <div class="section-header">
+
+            <h2>Train Anywhere</h2>
+
+            <p>
+                Your fitness system adapts to where you are,
+                what equipment you have, and how much time you can give.
+            </p>
+
+        </div>
+
+        <div class="cards-grid">
+
+            <div class="info-card">
+                <h3>Home Workouts</h3>
+                <p>
+                    Effective bodyweight and dumbbell workouts
+                    built for small spaces and busy schedules.
+                </p>
+            </div>
+
+            <div class="info-card">
+                <h3>Gym Sessions</h3>
+                <p>
+                    Structured strength and hypertrophy training
+                    designed for maximum performance and progression.
+                </p>
+            </div>
+
+            <div class="info-card">
+                <h3>No Equipment Training</h3>
+                <p>
+                    Stay consistent anywhere with AI-generated
+                    workouts that require zero equipment.
+                </p>
+            </div>
+
+            <div class="info-card">
+                <h3>Travel Friendly Plans</h3>
+                <p>
+                    Keep training while traveling with compact,
+                    flexible sessions built for hotels and small spaces.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+         TIME BASED WORKOUTS
+    ========================== -->
+
+    <section class="duration-section">
+
+        <div class="section-header">
+
+            <h2>Workouts For Every Schedule</h2>
+
+            <p>
+                Short on time? The system automatically adjusts
+                workout intensity and duration for your day.
+            </p>
+
+        </div>
+
+        <div class="duration-grid">
+
+            <div class="duration-card">
+                <span>5 MIN</span>
+                <h3>Quick Burn</h3>
+                <p>Fast mobility and calorie-burning sessions.</p>
+            </div>
+
+            <div class="duration-card">
+                <span>10 MIN</span>
+                <h3>Energy Boost</h3>
+                <p>Short workouts designed to increase energy and focus.</p>
+            </div>
+
+            <div class="duration-card">
+                <span>20 MIN</span>
+                <h3>Full Workout</h3>
+                <p>Balanced sessions combining strength and conditioning.</p>
+            </div>
+
+            <div class="duration-card">
+                <span>30 MIN</span>
+                <h3>Strength Builder</h3>
+                <p>Longer progressive workouts for muscle and endurance.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+         ADAPTIVE TRAINING
+    ========================== -->
+
+    <section class="adaptive-section">
+
+        <div class="section-header">
+
+            <h2>Adaptive AI Training</h2>
+
+            <p>
+                Your training evolves daily based on recovery,
+                consistency, energy, and lifestyle changes.
+            </p>
+
+        </div>
+
+        <div class="adaptive-grid">
+
+            <div class="adaptive-card">
+                <h3>Busy Day?</h3>
+                <p>
+                    The AI shortens sessions while maintaining workout quality.
+                </p>
+            </div>
+
+            <div class="adaptive-card">
+                <h3>Feeling Fatigued?</h3>
+                <p>
+                    Recovery-focused sessions reduce burnout and improve consistency.
+                </p>
+            </div>
+
+            <div class="adaptive-card">
+                <h3>Missed A Workout?</h3>
+                <p>
+                    Your weekly schedule intelligently adjusts without ruining progression.
+                </p>
+            </div>
+
+            <div class="adaptive-card">
+                <h3>No Gym Access?</h3>
+                <p>
+                    The system instantly switches to home or bodyweight training.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+         COMPARISON
+    ========================== -->
+
+    <section class="comparison-section">
+
+        <div class="comparison-box bad-side">
+
+            <h2>Rigid Fitness Plans</h2>
+
+            <ul>
+                <li>Hard to follow consistently</li>
+                <li>Missed days ruin motivation</li>
+                <li>Require fixed schedules</li>
+                <li>Often unrealistic long-term</li>
+                <li>Limited flexibility</li>
+            </ul>
+
+        </div>
+
+        <div class="comparison-box good-side">
+
+            <h2>Flexible AI Training</h2>
+
+            <ul>
+                <li>Fits your real lifestyle</li>
+                <li>Designed for consistency</li>
+                <li>Home and gym compatible</li>
+                <li>Adjusts to your routine</li>
+                <li>Sustainable long-term progress</li>
+            </ul>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+         REAL LIFE SCENARIOS
+    ========================== -->
+
+    <section class="scenario-section">
+
+        <div class="section-header">
+
+            <h2>Built For Real Life</h2>
+
+            <p>
+                Flexible fitness systems designed around
+                everyday routines and lifestyles.
+            </p>
+
+        </div>
+
+        <div class="scenario-grid">
+
+            <div class="scenario-card">
+                <h3>Busy Student</h3>
+                <p>
+                    15-minute evening sessions after classes and assignments.
+                </p>
+            </div>
+
+            <div class="scenario-card">
+                <h3>Office Worker</h3>
+                <p>
+                    Mobility and fat-burn workouts designed for desk lifestyles.
+                </p>
+            </div>
+
+            <div class="scenario-card">
+                <h3>Traveler</h3>
+                <p>
+                    No-equipment hotel workouts to maintain consistency anywhere.
+                </p>
+            </div>
+
+            <div class="scenario-card">
+                <h3>Beginner</h3>
+                <p>
+                    Low-impact guided sessions that gradually build confidence.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+         MOTIVATION
+    ========================== -->
+
+    <section class="motivation-section">
+
+        <h2>
+            Consistency Beats Intensity
+        </h2>
+
+        <p>
+            The best workout is the one you can sustain.
+            Flexible fitness creates long-term transformation
+            without stress or burnout.
+        </p>
+
+    </section>
+
+    <!-- =========================
+         CTA SECTION
+    ========================== -->
+
+    <section class="cta-section">
+
+        <h2>
+            Build Your Adaptive Fitness Plan
+        </h2>
+
+        <p>
+            Personalized workouts that evolve with your
+            schedule, lifestyle, and goals.
+        </p>
+
+        <a href="/register" class="cta-btn">
+            Start My Flexible Plan
+        </a>
+
+    </section>
+
+</body>
+</html>

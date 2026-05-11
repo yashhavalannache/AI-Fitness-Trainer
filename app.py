@@ -461,6 +461,18 @@ def logout():
 
     return redirect(url_for('home'))
 
+
+@app.route('/workout_ai')
+def workout_ai():
+    return render_template('workout_ai.html')
+
+
+@app.route('/training')
+def training():
+    return render_template('training.html')
+
+
+
 # =========================
 # RUN APP
 # =========================

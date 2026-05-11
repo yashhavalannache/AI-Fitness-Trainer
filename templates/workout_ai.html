@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout AI</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='css/workout_ai.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+     <link rel="icon" type="image/png" sizes="32x32" href="/static/images/logo.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/static/images/logo.png">
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            Fitverse AI
+        </div>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/register" class="nav-btn">Get Started</a>
+        </div>
+
+    </nav>
+
+    <!-- =========================
+         HERO SECTION
+    ========================== -->
+
+    <section class="hero-section">
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+
+            <h1>
+                Train With Precision.
+                <br>
+                Not Guesswork.
+            </h1>
+
+            <p>
+                Every set, rep, and exercise is intelligently selected
+                to match your body, recovery, fitness level, and goals.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="/register" class="primary-btn">
+                    Start Smart Training
+                </a>
+
+                <a href="/login" class="secondary-btn">
+                    Login
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+         HOW AI THINKS
+    ========================== -->
+
+    <section class="section">
+
+        <div class="section-header">
+
+            <h2>How The AI Builds Your Workout</h2>
+
+            <p>
+                Intelligent training systems designed to create
+                structured and progressive fitness plans.
+            </p>
+
+        </div>
+
+        <div class="cards-grid">
+
+            <div class="info-card">
+
+                <h3>Goal Analysis</h3>
+
+                <p>
+                    The AI understands whether your focus is fat loss,
+                    muscle growth, endurance, or athletic performance.
+                </p>
+
+            </div>
+
+            <div class="info-card">
+
+                <h3>Smart Exercise Matching</h3>
+
+                <p>
+                    Exercises are selected based on your level,
+                    equipment access, and recovery capacity.
+                </p>
+
+            </div>
+
+            <div class="info-card">
+
+                <h3>Progressive Overload</h3>
+
+                <p>
+                    Intensity increases gradually over time to maximize
+                    growth while reducing injury risk.
+                </p>
+
+            </div>
+
+            <div class="info-card">
+
+                <h3>Recovery Optimization</h3>
+
+                <p>
+                    Missed workouts, fatigue, and consistency are analyzed
+                    to intelligently adapt your training.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+         WEEKLY PREVIEW
+    ========================== -->
+
+    <section class="workout-preview">
+
+        <div class="section-header">
+
+            <h2>AI Weekly Workout Preview</h2>
+
+            <p>
+                Structured programming designed for consistency,
+                recovery, and long-term transformation.
+            </p>
+
+        </div>
+
+        <div class="workout-grid">
+
+            <div class="workout-card">
+                <span>Monday</span>
+                <h3>Chest + Triceps</h3>
+                <p>Strength focused pushing workout.</p>
+            </div>
+
+            <div class="workout-card">
+                <span>Tuesday</span>
+                <h3>Back + Biceps</h3>
+                <p>Pull strength and posture development.</p>
+            </div>
+
+            <div class="workout-card">
+                <span>Wednesday</span>
+                <h3>Recovery + Mobility</h3>
+                <p>Muscle recovery and flexibility improvement.</p>
+            </div>
+
+            <div class="workout-card">
+                <span>Thursday</span>
+                <h3>Leg Day</h3>
+                <p>Lower body power and endurance training.</p>
+            </div>
+
+            <div class="workout-card">
+                <span>Friday</span>
+                <h3>Full Body HIIT</h3>
+                <p>Fat burn, conditioning, and stamina boost.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+         NO RANDOM WORKOUTS
+    ========================== -->
+
+    <section class="comparison-section">
+
+        <div class="comparison-box bad-side">
+
+            <h2>Without Structure</h2>
+
+            <ul>
+                <li>Random exercises every day</li>
+                <li>No progressive overload</li>
+                <li>Inconsistent results</li>
+                <li>Higher injury risk</li>
+                <li>Confusing fitness advice</li>
+            </ul>
+
+        </div>
+
+        <div class="comparison-box good-side">
+
+            <h2>With AI Precision</h2>
+
+            <ul>
+                <li>Personalized workout systems</li>
+                <li>Structured progression</li>
+                <li>Recovery-aware planning</li>
+                <li>Adaptive training intensity</li>
+                <li>Predictable transformation</li>
+            </ul>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+         AI RECOMMENDATIONS
+    ========================== -->
+
+    <section class="recommendation-section">
+
+        <div class="section-header">
+
+            <h2>Live AI Recommendations</h2>
+
+            <p>
+                Smart suggestions generated from your
+                training consistency and performance.
+            </p>
+
+        </div>
+
+        <div class="recommendation-grid">
+
+            <div class="recommend-card">
+                Increase dumbbell press weight by 2.5kg next week.
+            </div>
+
+            <div class="recommend-card">
+                Recovery levels slightly low. Reduce training intensity today.
+            </div>
+
+            <div class="recommend-card">
+                Workout consistency improved by 18% this month.
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+         MOTIVATION
+    ========================== -->
+
+    <section class="motivation-section">
+
+        <h2>
+            The Best Bodies Are Built
+            Through Structured Progression
+        </h2>
+
+        <p>
+            Real transformation happens when workouts are planned,
+            measured, and intelligently adjusted over time.
+        </p>
+
+    </section>
+
+    <!-- =========================
+         CTA
+    ========================== -->
+
+    <section class="cta-section">
+
+        <h2>
+            Start Training Smarter Today
+        </h2>
+
+        <p>
+            Let AI guide your workouts, recovery, and progression
+            with precision-based training systems.
+        </p>
+
+        <a href="/register" class="cta-btn">
+            Generate My AI Workout
+        </a>
+
+    </section>
+
+</body>
+</html>
