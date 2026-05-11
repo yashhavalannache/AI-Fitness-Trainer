@@ -472,8 +472,6 @@ footer{
    GRID FIX
 ========================= */
 
-/* PREDICT GRID */
-
 .predictable-grid{
 
     width:100%;
@@ -532,96 +530,7 @@ footer{
 }
 
 /* =========================
-   BACKGROUND IMAGES
-========================= */
-
-.left-card{
-    background:
-    linear-gradient(
-        to top,
-        rgba(0,0,0,0.88),
-        rgba(0,0,0,0.18)
-    ),
-    url('/static/images/gym-phone.png');
-}
-
-.right-card{
-    background:
-    linear-gradient(
-        to top,
-        rgba(0,0,0,0.88),
-        rgba(0,0,0,0.18)
-    ),
-    url('/static/images/gym-woman.png');
-}
-
-/* =========================
-   CONTENT
-========================= */
-
-.predict-content{
-    position:relative;
-    z-index:2;
-    width:100%;
-}
-
-.predict-content h3{
-
-    font-size:42px;
-
-    line-height:1.15;
-
-    text-align:left;
-
-    color:#ffffff;
-
-    margin-bottom:20px;
-
-    font-weight:800;
-}
-
-.predict-content p{
-
-    text-align:left;
-
-    color:#f3f4f6;
-
-    font-size:20px;
-
-    line-height:1.8;
-
-    max-width:520px;
-}
-
-/* =========================
-   TABLET
-========================= */
-
-@media (max-width:992px){
-
-    .predictable-grid{
-
-        grid-template-columns:1fr;
-    }
-
-    .predict-card{
-
-        height:460px;
-    }
-
-    .predictable-header h2{
-
-        font-size:52px;
-    }
-
-    .predictable-header p{
-
-        font-size:20px;
-    }
-}
-
-/* =========================
-   MOBILE
+   MOBILE FIX
 ========================= */
 
 @media (max-width:768px){
@@ -633,30 +542,76 @@ footer{
 
     .predictable-grid{
 
+        width:100%;
+
+        display:grid;
+
         grid-template-columns:1fr;
+
+        gap:20px;
+
+        align-items:stretch;
     }
 
     .predict-card{
+
+        position:relative;
+
+        width:100%;
 
         min-height:380px;
 
         height:auto;
 
+        border-radius:28px;
+
+        overflow:hidden;
+
+        display:flex;
+
+        align-items:flex-end;
+
         padding:25px;
 
-        border-radius:28px;
+        transition:0.4s ease;
+
+        border:1px solid rgba(59,130,246,0.25);
+
+        box-shadow:0 0 35px rgba(37,99,235,0.18);
+
+        background-size:cover !important;
+
+        background-position:center !important;
+
+        background-repeat:no-repeat !important;
     }
 
     .predict-content h3{
 
         font-size:28px;
+
+        line-height:1.15;
+
+        text-align:left;
+
+        color:#ffffff;
+
+        margin-bottom:20px;
+
+        font-weight:800;
     }
 
     .predict-content p{
 
+        text-align:left;
+
+        color:#f3f4f6;
+
         font-size:15px;
 
         line-height:1.7;
+
+        max-width:100%;
     }
 
     .predictable-header h2{
