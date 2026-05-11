@@ -436,7 +436,6 @@ footer{
         padding:70px 15px;
     }
 }
-
 /* =========================
    PREMIUM SHOWCASE SECTION
 ========================= */
@@ -472,6 +471,8 @@ footer{
 /* =========================
    GRID FIX
 ========================= */
+
+/* PREDICT GRID */
 
 .predictable-grid{
 
@@ -630,9 +631,16 @@ footer{
         padding:50px 18px;
     }
 
+    .predictable-grid{
+
+        grid-template-columns:1fr;
+    }
+
     .predict-card{
 
-        height:380px;
+        min-height:380px;
+
+        height:auto;
 
         padding:25px;
 
@@ -670,7 +678,9 @@ footer{
 
     .predict-card{
 
-        height:320px;
+        min-height:320px;
+
+        height:auto;
 
         padding:20px;
     }
