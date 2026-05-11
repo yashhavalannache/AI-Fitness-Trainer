@@ -480,44 +480,6 @@ body::after{
     }
 }
 
-@media(max-width:768px){
-
-    /* FIXED: sidebar now visible + scrollable */
-    .sidebar{
-        display:block;
-        width:220px;
-        height:100vh;
-        overflow-y:auto;
-        -webkit-overflow-scrolling:touch;
-    }
-
-    .main-content{
-        margin-left:0;
-        padding:20px;
-    }
-
-    .main-content h1{
-        font-size:34px;
-    }
-
-    .cards,
-    .workout-cards,
-    .diet-cards,
-    .progress-cards{
-        grid-template-columns:1fr;
-    }
-
-    .chart-container{
-        padding:20px;
-    }
-
-    .workout-section h2,
-    .diet-section h2,
-    .progress-section h2,
-    .analytics-section h2{
-        font-size:28px;
-    }
-}
 /* =========================
    LOGOUT MODAL
 ========================= */
@@ -681,92 +643,186 @@ body::after{
     }
 }
 
-
 /* =========================
-   SAFE RESPONSIVE FIX (NO DESIGN CHANGE)
+   SAFE RESPONSIVE FIX
 ========================= */
 
 /* Tablet adjustment */
+
 @media(max-width:900px){
+
+    body{
+        overflow-y:auto !important;
+        overflow-x:hidden !important;
+    }
 
     .sidebar{
         width:220px;
+        height:100vh;
+        overflow-y:auto;
     }
 
     .main-content{
-        margin-left:220px;
+        margin-left:240px;
         padding:35px;
+        width:calc(100% - 240px);
     }
 }
 
-/* Mobile view */
+/* MOBILE */
+
 @media(max-width:768px){
 
-    /* Hide sidebar cleanly */
+    body{
+
+        display:block !important;
+
+        min-height:100vh;
+
+        overflow-y:auto !important;
+
+        overflow-x:hidden !important;
+    }
+
+    /* SIDEBAR SHOW ON TOP */
+
     .sidebar{
-        display:none;
+
+        display:block !important;
+
+        position:relative !important;
+
+        width:100% !important;
+
+        height:auto !important;
+
+        padding:20px 15px !important;
+
+        border-right:none !important;
+
+        border-bottom:1px solid rgba(124,58,237,0.12);
+
+        overflow:visible !important;
     }
 
-    /* Reset layout */
+    /* SIDEBAR MENU */
+
+    .sidebar ul{
+
+        display:flex;
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+        gap:10px;
+    }
+
+    .sidebar ul li{
+        margin:0 !important;
+    }
+
+    .sidebar ul li a{
+
+        padding:10px 15px;
+
+        font-size:14px;
+
+        border-radius:12px;
+    }
+
+    /* LOGO */
+
+    .sidebar h2{
+
+        margin-bottom:20px;
+
+        font-size:24px;
+    }
+
+    /* MAIN CONTENT */
+
     .main-content{
-        margin-left:0;
-        padding:20px;
+
+        margin-left:0 !important;
+
+        width:100% !important;
+
+        padding:22px !important;
     }
 
-    /* Title scaling only */
+    /* TITLE */
+
     .main-content h1{
-        font-size:32px;
+
+        font-size:32px !important;
+
+        line-height:1.3;
     }
 
-    /* Cards grid safety */
+    /* CARDS */
+
     .cards,
     .workout-cards,
     .diet-cards,
     .progress-cards{
-        grid-template-columns:1fr;
+
+        grid-template-columns:1fr !important;
+
         gap:18px;
     }
 
-    /* Card padding safety */
+    /* CARD PADDING */
+
     .card,
     .workout-card,
     .diet-card,
     .progress-card{
-        padding:26px;
+
+        padding:24px !important;
     }
 
-    /* Chart responsiveness */
+    /* CHART */
+
     .chart-container{
+
         padding:20px;
     }
 
     .chart-container canvas{
+
         max-height:320px;
     }
 
-    /* Section headings */
+    /* SECTION TITLES */
+
     .workout-section h2,
     .diet-section h2,
     .progress-section h2,
     .analytics-section h2{
+
         font-size:26px;
     }
 
-    /* Modal fix */
+    /* MODAL */
+
     .logout-box{
-        width:90%;
+
+        width:90% !important;
+
         max-width:400px;
     }
 }
 
 /* Small mobile */
+
 @media(max-width:480px){
 
     .main-content{
-        padding:16px;
+        padding:16px !important;
     }
 
     .main-content h1{
-        font-size:28px;
+        font-size:28px !important;
     }
 }

@@ -725,9 +725,63 @@ h3{
 
 @media(max-width:768px){
 
+    /* SHOW SIDEBAR AT TOP */
+
     .sidebar{
-        display:none;
+
+        display:block !important;
+
+        position:relative !important;
+
+        width:100% !important;
+
+        height:auto !important;
+
+        padding:20px 15px !important;
+
+        border-right:none !important;
+
+        border-bottom:1px solid rgba(124,58,237,0.12);
+
+        overflow:visible !important;
     }
+
+    /* SIDEBAR MENU */
+
+    .sidebar ul{
+
+        display:flex;
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+        gap:10px;
+    }
+
+    .sidebar ul li{
+        margin:0 !important;
+    }
+
+    .sidebar ul li a{
+
+        padding:10px 15px;
+
+        font-size:14px;
+
+        border-radius:12px;
+    }
+
+    /* LOGO */
+
+    .sidebar h2{
+
+        margin-bottom:20px;
+
+        font-size:24px;
+    }
+
+    /* MAIN CONTENT */
 
     .main-content,
     .main{
